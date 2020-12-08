@@ -2,7 +2,7 @@ package Recruit;
 
 import java.util.ArrayList;
 
-public abstract class RecruitAbstract {
+public abstract class RecruitAbstract<T> {
 
     private final Page page;
 
@@ -14,10 +14,10 @@ public abstract class RecruitAbstract {
         ArrayList<Job> jobs = new ArrayList<Job>();
 
         while (true) {
-            String url = getRecruitUrl();
+            String url = generateRecruitUrl();
             String pageString = page.getPage(url);
 
-            for (String item : getList(pageString)) {
+            for (T item : getList(pageString)) {
                 Job job = new Job(
                         getSubject(item),
                         getStartDate(item),
@@ -33,10 +33,10 @@ public abstract class RecruitAbstract {
         return jobs;
     }
 
-    abstract protected String getRecruitUrl();
-    abstract protected ArrayList<String> getList(String page);
-    abstract protected String getSubject(String item);
-    abstract protected String getStartDate(String item);
-    abstract protected String getEndDate(String item);
+    abstract protected String generateRecruitUrl();
+    abstract protected ArrayList<T> getList(String page);
+    abstract protected String getSubject(T item);
+    abstract protected String getStartDate(T item);
+    abstract protected String getEndDate(T item);
 
 }

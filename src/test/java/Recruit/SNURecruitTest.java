@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -64,6 +66,20 @@ public class SNURecruitTest {
         String subject = recruitInstance.getSubject(list.get(0));
 
         assertEquals("2021년도 임상강사 선발 최종 합격자 발표 및 등록 안내", subject);
+    }
+
+    @Test
+    void testGetStartDate() {
+        LocalDate startDate = recruitInstance.getStartDate(list.get(0));
+        
+        assertEquals("2020-12-08", startDate.toString());
+    }
+
+    @Test
+    void testGetEndDate() {
+        LocalDate endDate = recruitInstance.getEndDate(list.get(0));
+        
+        assertEquals("2020-12-18", endDate.toString());
     }
     
     

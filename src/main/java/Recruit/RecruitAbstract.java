@@ -1,5 +1,6 @@
 package Recruit;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public abstract class RecruitAbstract<T> {
@@ -36,7 +37,7 @@ public abstract class RecruitAbstract<T> {
     abstract protected String generateRecruitUrl();
     abstract protected ArrayList<T> getList(String page);
     abstract protected String getSubject(T item);
-    abstract protected String getStartDate(T item);
-    abstract protected String getEndDate(T item);
+    abstract protected LocalDate getStartDate(T item);
+    abstract protected LocalDate getEndDate(T item);
 
 }

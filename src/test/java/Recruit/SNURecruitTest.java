@@ -81,8 +81,14 @@ public class SNURecruitTest {
         
         assertEquals("2020-12-18", endDate.toString());
     }
-    
-    
+
+    @Test
+    void testGetLink() {
+        String link = recruitInstance.getLink(list.get(0));
+
+        assertEquals("http://www.snuh.org/about/news/recruit/recruView.do?recruit_id=20153", link);
+    }
+
     private String readFileInResources(String path) throws IOException {
         Path file = Path.of("", "src/test/resources").resolve(path);
         return Files.readString(file);

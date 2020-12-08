@@ -21,6 +21,7 @@ public abstract class RecruitAbstract<T> {
             for (T item : getList(pageString)) {
                 Job job = new Job(
                         getSubject(item),
+                        getLink(item),
                         getStartDate(item),
                         getEndDate(item)
                 );
@@ -37,6 +38,7 @@ public abstract class RecruitAbstract<T> {
     abstract protected String generateRecruitUrl();
     abstract protected ArrayList<T> getList(String page);
     abstract protected String getSubject(T item);
+    abstract protected String getLink(T item);
     abstract protected LocalDate getStartDate(T item);
     abstract protected LocalDate getEndDate(T item);
 

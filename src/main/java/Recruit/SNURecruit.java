@@ -17,7 +17,7 @@ public class SNURecruit extends RecruitAbstract<Element> {
     }
 
     @Override
-    protected final String generateRecruitUrl() {
+    protected final String generateNextRecruitUrl() {
         pageIndex ++;
         return baseRecruitUrl + "/recruList.do?pageIndex=" + pageIndex;
     }

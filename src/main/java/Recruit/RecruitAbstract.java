@@ -15,7 +15,7 @@ public abstract class RecruitAbstract<T> {
         ArrayList<Job> jobs = new ArrayList<Job>();
 
         while (true) {
-            String url = generateRecruitUrl();
+            String url = generateNextRecruitUrl();
             String pageString = page.getPage(url);
 
             for (T item : getList(pageString)) {
@@ -35,7 +35,7 @@ public abstract class RecruitAbstract<T> {
         return jobs;
     }
 
-    abstract protected String generateRecruitUrl();
+    abstract protected String generateNextRecruitUrl();
     abstract protected ArrayList<T> getList(String page);
     abstract protected String getSubject(T item);
     abstract protected String getLink(T item);

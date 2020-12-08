@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,11 +28,11 @@ public class SNURecruitTest {
 
     @Test
     void testGenerateRecruitUrl() {
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=1", recruitInstance.generateRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=2", recruitInstance.generateRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=3", recruitInstance.generateRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=4", recruitInstance.generateRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=5", recruitInstance.generateRecruitUrl());
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=1", recruitInstance.generateNextRecruitUrl());
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=2", recruitInstance.generateNextRecruitUrl());
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=3", recruitInstance.generateNextRecruitUrl());
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=4", recruitInstance.generateNextRecruitUrl());
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=5", recruitInstance.generateNextRecruitUrl());
     }
 
     @Test

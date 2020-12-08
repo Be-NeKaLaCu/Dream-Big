@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class SNURecruit extends RecruitAbstract<Element> {
 
     private int pageIndex = 0;
+    private final String baseRecruitUrl = "http://www.snuh.org/about/news/recruit";
 
     SNURecruit(Page page) {
         super(page);
@@ -18,7 +19,7 @@ public class SNURecruit extends RecruitAbstract<Element> {
     @Override
     protected final String generateRecruitUrl() {
         pageIndex ++;
-        return "http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=" + pageIndex;
+        return baseRecruitUrl + "/recruList.do?pageIndex=" + pageIndex;
     }
 
     @Override
@@ -33,6 +34,11 @@ public class SNURecruit extends RecruitAbstract<Element> {
     @Override
     protected final String getSubject(Element item) {
         return item.getElementsByClass("alignL").get(0).text();
+    }
+
+    @Override
+    protected String getLink(Element item) {
+        return baseRecruitUrl + item.getElementsByTag("a").get(0).attr("href").substring(1);
     }
 
     @Override

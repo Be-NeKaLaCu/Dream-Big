@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class SNURecruit extends RecruitAbstract<Element> {
@@ -35,12 +36,19 @@ public class SNURecruit extends RecruitAbstract<Element> {
     }
 
     @Override
-    protected final String getStartDate(Element item) {
-        return null;
+    protected final LocalDate getStartDate(Element item) {
+        String[] dateRange = getDateRange(item);
+        return LocalDate.parse(dateRange[0]);
     }
 
     @Override
-    protected final String getEndDate(Element item) {
-        return null;
+    protected final LocalDate getEndDate(Element item) {
+        String[] dateRange = getDateRange(item);
+        return LocalDate.parse(dateRange[1]);
+    }
+
+    private String[] getDateRange(Element item) {
+        Element dateElement = item.getElementsByTag("td").get(2);
+        return dateElement.text().split(" ~ ");
     }
 }

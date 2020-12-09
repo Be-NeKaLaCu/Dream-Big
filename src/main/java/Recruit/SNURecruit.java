@@ -4,26 +4,37 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class SNURecruit extends RecruitAbstract<Element> {
 
-    private int pageIndex = 0;
     private final String baseRecruitUrl = "http://www.snuh.org/about/news/recruit";
 
-    SNURecruit(Page page) {
-        super(page);
+    @Override
+    protected String getRecruitPage(int page) throws IOException, InterruptedException {
+        String recruitUrl = getRecruitPageUrl(page);
+
+        URI uri = URI.create(recruitUrl);
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder(uri).build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
+
+    String getRecruitPageUrl(int page) {
+        return baseRecruitUrl + "/recruList.do?pageIndex=" + page;
     }
 
     @Override
-    protected final String generateNextRecruitUrl() {
-        pageIndex ++;
-        return baseRecruitUrl + "/recruList.do?pageIndex=" + pageIndex;
-    }
-
-    @Override
-    protected final ArrayList<Element> getList(String page) {
+    protected ArrayList<Element> getList(String page) {
         Document doc = Jsoup.parse(page);
 
         return doc.getElementsByClass("boardTypeTbl").get(0)
@@ -32,7 +43,7 @@ public class SNURecruit extends RecruitAbstract<Element> {
     }
 
     @Override
-    protected final String getSubject(Element item) {
+    protected String getSubject(Element item) {
         return item.getElementsByClass("alignL").get(0).text();
     }
 
@@ -42,18 +53,18 @@ public class SNURecruit extends RecruitAbstract<Element> {
     }
 
     @Override
-    protected final LocalDate getStartDate(Element item) {
+    protected LocalDate getStartDate(Element item) {
         String[] dateRange = getDateRange(item);
         return LocalDate.parse(dateRange[0]);
     }
 
     @Override
-    protected final LocalDate getEndDate(Element item) {
+    protected LocalDate getEndDate(Element item) {
         String[] dateRange = getDateRange(item);
         return LocalDate.parse(dateRange[1]);
     }
 
-    private String[] getDateRange(Element item) {
+    String[] getDateRange(Element item) {
         Element dateElement = item.getElementsByTag("td").get(2);
         return dateElement.text().split(" ~ ");
     }

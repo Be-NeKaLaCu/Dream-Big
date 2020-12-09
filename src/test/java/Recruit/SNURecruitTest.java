@@ -15,24 +15,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SNURecruitTest {
 
-    private final SNURecruit recruitInstance;
+    private final SNURecruit snuRecruit;
     private final ArrayList<Element> list;
 
     SNURecruitTest() throws IOException {
-        recruitInstance = new SNURecruit(new Page());
+        snuRecruit = new SNURecruit();
 
-        String content = readFileInResources("SNURecruit/page");
+        String content = readFileInResources("SNURecruit/page_1");
 
-        list = recruitInstance.getList(content);
+        list = snuRecruit.getList(content);
     }
 
     @Test
     void testGenerateRecruitUrl() {
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=1", recruitInstance.generateNextRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=2", recruitInstance.generateNextRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=3", recruitInstance.generateNextRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=4", recruitInstance.generateNextRecruitUrl());
-        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=5", recruitInstance.generateNextRecruitUrl());
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=1", snuRecruit.getRecruitPageUrl(1));
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=2", snuRecruit.getRecruitPageUrl(2));
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=3", snuRecruit.getRecruitPageUrl(3));
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=4", snuRecruit.getRecruitPageUrl(4));
+        assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=5", snuRecruit.getRecruitPageUrl(5));
     }
 
     @Test
@@ -62,28 +62,28 @@ public class SNURecruitTest {
 
     @Test
     void testGetSubject() {
-        String subject = recruitInstance.getSubject(list.get(0));
+        String subject = snuRecruit.getSubject(list.get(0));
 
         assertEquals("2021년도 임상강사 선발 최종 합격자 발표 및 등록 안내", subject);
     }
 
     @Test
     void testGetStartDate() {
-        LocalDate startDate = recruitInstance.getStartDate(list.get(0));
+        LocalDate startDate = snuRecruit.getStartDate(list.get(0));
         
         assertEquals("2020-12-08", startDate.toString());
     }
 
     @Test
     void testGetEndDate() {
-        LocalDate endDate = recruitInstance.getEndDate(list.get(0));
+        LocalDate endDate = snuRecruit.getEndDate(list.get(0));
         
         assertEquals("2020-12-18", endDate.toString());
     }
 
     @Test
     void testGetLink() {
-        String link = recruitInstance.getLink(list.get(0));
+        String link = snuRecruit.getLink(list.get(0));
 
         assertEquals("http://www.snuh.org/about/news/recruit/recruView.do?recruit_id=20153", link);
     }

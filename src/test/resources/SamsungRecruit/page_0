@@ -1,0 +1,1370 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js" itemscope="itemscope" itemtype="http://schema.org/WebPage" lang="ko">
+<head>
+	<!-- Google Tag Manager 20191120 -->
+	<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];
+	w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+	var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+	j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TZ952TK');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>채용공고 목록 - 채용공고 - 채용정보 - 인재채용 - 삼성서울병원</title>
+
+	<meta name="description" content="채용공고 목록">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=1000">
+
+
+
+
+
+	<meta property="og:site_name" content="삼성서울병원" />
+	<meta property="og:title" content="채용공고 목록 - 채용공고 - 채용정보 - 인재채용" />
+	<meta property="og:description" content="채용공고 목록" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://www.samsunghospital.com/home/recruit/recruitInfo/recruitNotice.do?cPage=02" />
+	<meta property="og:image" content="http://www.samsunghospital.com/_newhome/ui/home/static/img/default-sns.jpg" />
+
+	<link rel="apple-touch-icon" href="/_newhome/ui/_component/static/img/ico/favicon.ico" />
+	<link rel="shortcut icon" href="/_newhome/ui/_component/static/img/ico/favicon.ico" />
+
+	<link rel="stylesheet" href="/_newhome/ui/_component/static/css/component.css" media="all">
+	<link rel="stylesheet" href="/_newhome/ui/recruit/static/css/style.css" media="all">
+	<link rel="stylesheet" href="/_newhome/ui/recruit/static/css/content.css" media="all">
+
+	<script src="/_newhome/ui/_component/static/js/lib/modernizr-2.8.3.min.js"></script>
+	<script src="/_newhome/ui/_component/static/js/lib/jquery-1.11.1.min.js"></script>
+	<script src="/_newhome/ui/_component/static/js/lib/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+	<script src="/_newhome/js/layout.js"></script>
+
+	<!--[if lte IE 8]>
+	<script src="/_newhome/ui/_component/static/js/lib/html5shiv.js"></script>
+	<script src="/_newhome/ui/_component/static/js/lib/html5shiv-printshiv.js"></script>
+	<![endif]-->
+	<script src="/_newhome/js/pcn_common.js"></script>
+	<script src="/_newhome/js/layout_independent.js"></script>
+	<script type="text/javascript">
+
+		var url = "/home/recruit/recruitInfo/recruitNotice.do";
+		$(document).ready(function() {
+			//페이지 로드시 gnb메뉴명으로 location설정
+
+			locationChage("채용공고");
+
+
+		});
+
+		function login() {
+			var requestURL = "http://www.samsunghospital.com/home/recruit/recruitInfo/recruitNotice.do?cPage=02";
+			$('#prevURI').val(requestURL);
+			$('#prevPageForm').attr("action","/home/member/login.do").submit();
+
+		}
+
+		var _share = function(no) {
+			var _url = '';
+			var url = document.location.href;
+			var txt = document.title;
+			var shareFrm = $("#shareFrm");
+
+			switch(no) {
+			case 1:
+				_url = 'https://api.addthis.com/oexchange/0.8/forward/facebook/offer';
+				break;
+			case 2:
+				_url = 'https://api.addthis.com/oexchange/0.8/forward/twitter/offer';
+				break;
+			case 3:
+				_url = 'https://api.addthis.com/oexchange/0.8/forward/google_plusone_share/offer';
+				break;
+			case 4:
+				_url = 'https://api.addthis.com/oexchange/0.8/forward/email/offer';
+				break;
+			}
+
+			if(_url != null && _url != '') {
+				window.open('','sharePopup',"height=300,width=400");
+			}
+
+			shareFrm.append("<input type=\"hidden\" id=\"title\" name=\"title\">");
+			$("#url").val(url);
+			$("#title").val(txt);
+			shareFrm.attr("action",_url);
+			shareFrm.attr("target","sharePopup");
+
+			shareFrm.submit();
+		}
+
+	</script>
+
+
+
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+				$("#SEARCHBY_JOB_CODE").append('<option value="D" >임상강사</option>');
+				$("#SEARCHBY_JOB_CODE").selectmenu("refresh");
+
+				$("#SEARCHBY_JOB_CODE").append('<option value="EA" >인턴</option>');
+				$("#SEARCHBY_JOB_CODE").selectmenu("refresh");
+
+				$("#SEARCHBY_JOB_CODE").append('<option value="EB" >레지던트</option>');
+				$("#SEARCHBY_JOB_CODE").selectmenu("refresh");
+
+				$("#SEARCHBY_JOB_CODE").append('<option value="EC" >서브인턴</option>');
+				$("#SEARCHBY_JOB_CODE").selectmenu("refresh");
+
+				$("#SEARCHBY_JOB_CODE").append('<option value="P" >임상심리레지던트</option>');
+				$("#SEARCHBY_JOB_CODE").selectmenu("refresh");
+
+				$("#SEARCHBY_JOB_CODE").append('<option value="PH" >전공약사</option>');
+				$("#SEARCHBY_JOB_CODE").selectmenu("refresh");
+
+
+		});
+
+	</script>
+
+
+
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) 20191120 -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ952TK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<form id="prevPageForm" name="prevPageForm" action="" method="post">
+		<input type="hidden" name="viewType" id="viewType" value="Y" />
+		<input type="hidden" name="prevURI" id="prevURI" value="" />
+	</form>
+
+	<form id="shareFrm" action="" method="post" data-ajax=false>
+		<input type="hidden" id="url" name="url">
+		<input type="hidden" id="pubid" name="pubid" value="ra-52775a75159250a5">
+		<input type="hidden" id="ct" name="ct" value="1">
+		<input type="hidden" id="pco" name="pco" value="tbxnj-1.0">
+	</form>
+
+	<div class="wrapper"> <!-- Wrapper [S] -->
+
+		<header class="header" role="banner" data-spy="affix" data-offset-top="240"> <!-- Header [S] -->
+
+			<div class="inner-wrap">
+				<h1 id="brand">
+					<div class="brand-logo"><img src="/_newhome/ui/recruit/static/img/gnb/logo.png" alt="삼성서울병원 인재채용" usemap="#brand-logo" /></div>
+
+					<map name="brand-logo">
+						<area shape="rect" coords="0,0,190,27" href="/home/main/index.do" alt="삼성서울병원" />
+						<area shape="rect" coords="195,0,276,27" href="/home/recruit/main.do" alt="인재채용" />
+					</map>
+				</h1>
+			</div>
+
+			<div class="inner-wrap header-utility">
+				<div class="header-utility-area">
+					<div class="header-signin">
+
+
+
+
+									<a href="#" onclick="logIn(encodeURIComponent('http://www.samsunghospital.com/home/recruit/recruitInfo/recruitNotice.do?cPage=02'));" class="anchor-signin signin-context">
+										<i class="ico-signin"></i>
+										<span class="signin-text">로그인</span>
+									</a>
+
+
+
+
+					</div> <!-- /.header-signin -->
+					<form class="header-search " action="/home/search/search.do" method="post" name="totSearch" target="_blank"> <!-- [D] 확장: expanded 클래스 -->
+						<div class="header-expanded-search">
+							<input type="text" name="query" class="input-text input-text-blue" title="검색어" placeholder="검색하실 단어를 입력하세요." role="textbox">
+						</div>
+						<!-- Search layer [S]  -->
+						<div class="search-layer auto-wording "> <!-- [D] 보이기: show 클래스 -->
+								<div class="word-list">
+									<ul id="first-word-view" class="tab-panel ">
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>외검사</span><span class="search-num">123회</span></a></li> <!-- 첫단어보기 -->
+										<li><a href="#"><span class="word">당뇨</span><span class="search-num">12.03</span></a></li> <!-- 내가 찾은 검색어 -->
+										<li> <!-- 내가 찾은 검색어 삭제 -->
+											<a href="#"><span class="word">당뇨</span>
+												<button type="button" class="button btn-word-del" role="button">
+													<i class="iconset icon-close04" aria-hidden="true"></i>
+													<span class="button-text visually-hidden">search</span>
+												</button>
+											</a>
+										</li>
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>온증</span><span class="search-num">123회</span></a></li>
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>온증</span><span class="search-num">123회</span></a></li>
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>온증</span><span class="search-num">123회</span></a></li>
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>온증</span><span class="search-num">123회</span></a></li>
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>온증</span><span class="search-num">123회</span></a></li>
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>온증</span><span class="search-num">123회</span></a></li>
+										<li><a href="#"><span class="word"><strong class="important-blue">체</strong>온증</span><span class="search-num">123회</span></a></li>
+									</ul>
+								</div>
+							<div class="search-layer-setting">
+								<button class="button btn-setting-right">자동완성끄기</button>
+							</div>
+						</div><!-- Search layer [E]  -->
+						<button type="button" class="button button-header-search" role="button">
+							<i class="iconset icon-search" aria-hidden="true"></i>
+							<span class="visually-hidden">검색</span>
+						</button>
+					</form> <!-- /search form -->
+				</div>
+			</div>
+
+			<!-- 소셜 프로필 영역 [S] -->
+
+			<!-- 소셜 프로필 영역 [E] -->
+
+			<nav class="nav-gnb" role="navigation">
+				<h2 class="sr-only">글로벌 네비게이션</h2>
+				<div class="inner-wrap">
+					<ul id="gnb" role="menubar" class="menubar" aria-haspopup="true">
+						<!-- <li class="menu-parent">
+							<a href="/home/recruit/introduce/directorsGreeting.do" id="gnb_menu_A" role="menuitem" >
+								<em>병원소개</em>
+							</a>
+						</li> -->
+						<li class="menu-parent">
+							<a href="/home/recruit/HRpolicy/welfareGeneral.do" id="gnb_menu_B" role="menuitem" >
+								<em>인사제도</em>
+							</a>
+						</li> <!-- [D] a 태그에 current 클래스 : 활성화 -->
+						<li class="menu-parent">
+							<a href="/home/recruit/applyInfo/processGeneral.do" id="gnb_menu_C" role="menuitem" >
+								<em>지원안내</em>
+							</a>
+						</li>
+						<li class="menu-parent">
+							<a href="/home/recruit/recruitInfo/recruitNotice.do" id="gnb_menu_D" role="menuitem" class="current">
+								<em>채용정보</em>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="menu-panel" role="menu" aria-labelledby="gnb" aria-hidden="true">
+					<div class="inner-wrap">
+						<!-- <ul class="sub-menu" aria-labelledby="gnb_menu_A">
+							<li>
+								<a href="/home/recruit/introduce/directorsGreeting.do" role="menuitem">원장 인사말</a>
+							</li>
+							<li>
+								<a href="/home/recruit/introduce/hospitalIntroduce.do" role="menuitem">병원소개</a>
+							</li>
+							<li>
+								<a href="/home/recruit/introduce/location.do" role="menuitem">오시는 길</a>
+							</li>
+						</ul> -->
+						<ul class="sub-menu" aria-labelledby="gnb_menu_B">
+							<li>
+								<a href="/home/recruit/HRpolicy/welfareGeneral.do" role="menuitem">복리후생</a>
+							</li>
+							<li>
+								<a href="/home/recruit/HRpolicy/seniorMeetingList.do" role="menuitem">선배와의 만남</a>
+							</li>
+						</ul>
+						<ul class="sub-menu" aria-labelledby="gnb_menu_C">
+							<li>
+								<a href="/home/recruit/applyInfo/processGeneral.do" role="menuitem">일반직</a>
+							</li>
+							<li>
+								<a href="/home/recruit/applyInfo/processIntern01.do" role="menuitem">인턴</a>
+							</li>
+							<li>
+								<a href="/home/recruit/applyInfo/processResident01.do" role="menuitem">레지던트</a>
+							</li>
+							<li>
+								<a href="/home/recruit/applyInfo/processClinicalInstructor.do" role="menuitem">임상강사</a>
+							</li>
+							<li>
+								<a href="/home/recruit/applyInfo/processSubintern01.do" role="menuitem">서브인턴</a>
+							</li>
+							<li>
+								<a href="/home/recruit/applyInfo/applicationGuide.do" role="menuitem">지원서작성안내</a>
+							</li>
+							<li>
+								<a href="/home/recruit/applyInfo/recruitFAQ.do" role="menuitem">채용FAQ</a>
+							</li>
+						</ul>
+						<ul class="sub-menu" aria-labelledby="gnb_menu_D">
+							<li>
+								<a href="/home/recruit/recruitInfo/recruitNotice.do" role="menuitem">채용공고</a>
+							</li>
+							<li>
+								<a href="/home/recruit/recruitInfo/applicationList.do" role="menuitem">입사지원서조회/수정</a>
+							</li>
+							<li>
+								<a href="/home/recruit/recruitInfo/passCheckList.do" role="menuitem">합격조회</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<div class="inner-wrap bg-transparent">
+				<div class="gnb-location">
+					<ul class="breadcrumbs">
+						<li>
+							<a href="/home/recruit/main.do" class="location-home"><i class="ico-location"></i><span class="sound-only">홈</span></a>
+						</li>
+						<li id="location1">
+							<a href="#" class="location-label"><span class="location-text">인재채용</span><i class="ico-location-expand"></i></a>
+							<ul class="location-child">
+								<!-- <li><a href="/home/recruit/introduce/directorsGreeting.do">병원소개</a></li> -->
+								<li><a href="/home/recruit/HRpolicy/welfareGeneral.do">인사제도</a></li>
+								<li><a href="/home/recruit/applyInfo/processGeneral.do">지원안내</a></li>
+								<li><a href="/home/recruit/recruitInfo/recruitNotice.do">채용정보</a></li>
+							</ul>
+						</li>
+					</ul>
+
+
+				</div>
+			</div>
+
+		</header> <!-- Header [E] -->
+
+		<div class="container layout-column2" role="main"> <!-- LNB를 포함한 layout -->
+			<div class="inner-wrap clearfix">
+
+				<nav class="lnb-a" role="navigation"> <!-- LNB [S] -->
+
+
+
+
+					<h2 class="aside-title">채용정보</h2>
+					<ul class="dev_menu">
+						<li><a href="/home/recruit/recruitInfo/recruitNotice.do" class="dev_inner-anchor">채용공고</a></li>
+						<li><a href="/home/recruit/recruitInfo/applicationList.do" class="dev_inner-anchor">입사지원 조회/수정</a></li>
+						<li><a href="/home/recruit/recruitInfo/passCheckList.do" class="dev_inner-anchor">합격조회</a></li>
+
+					</ul>
+
+				</nav> <!-- LNB [E] -->
+
+
+
+	<section id="contents" class="employ-notice">
+
+		<div class="notice-upper">
+			삼성서울병원의 채용에 관심을 가져주셔서 대단히 감사합니다.<br />
+			입사지원서를 작성하시기 전에 ‘지원안내 > 지원서 작성안내’를 확인하신 후 작성하시기 바랍니다.
+
+		</div>
+
+		<form id="searchForm" name="searchForm" action="/home/recruit/recruitInfo/recruitNotice.do" method="post">
+
+			<div class="search-jobs">
+				<dl>
+					<dt>구분</dt>
+					<dd>
+						<label class="input-radio"  style="margin-right: 10px;">
+							<input type="radio" name="CAREER" value=""
+							checked />
+							<i aria-hidden="true"></i><span class="label-text">전체</span>
+						</label>
+						<label class="input-radio" style="margin-right: 10px;">
+							<input type="radio" name="CAREER" value="N"
+							 />
+							<i aria-hidden="true"></i><span class="label-text">신입</span>
+						</label>
+						<label class="input-radio" style="margin-right: 10px;">
+							<input type="radio" name="CAREER" value="Y"
+							 />
+							<i aria-hidden="true"></i><span class="label-text">경력</span>
+						</label>
+						<label class="input-radio" style="margin-right: 10px;">
+							<input type="radio" name="CAREER" value="X"
+							 />
+							<i aria-hidden="true"></i><span class="label-text">무관</span>
+						</label>
+					</dd>
+					<dt>직종</dt>
+					<dd>
+						<div class="input-selectbox">
+							<select id="SEARCHBY_JOB_CODE" name="JOB_CODE" title="selectbox">
+								<option value="">직종검색</option>
+
+								<option value='AAH'
+									>
+									행정(사무)직
+								</option>
+
+								<option value='AAHB'
+									>
+									보험심사
+								</option>
+
+								<option value='AAHD'
+									>
+									사회복지사
+								</option>
+
+								<option value='AAHE'
+									>
+									사무보조
+								</option>
+
+								<option value='AAHF'
+									>
+									기타
+								</option>
+
+								<option value='AAK'
+									>
+									병원경영의사
+								</option>
+
+								<option value='EAJ'
+									>
+									연구원
+								</option>
+
+								<option value='HAB'
+									>
+									간호사
+								</option>
+
+								<option value='HAB0'
+									>
+									간호사.
+								</option>
+
+								<option value='HAB1'
+									>
+									전문간호사
+								</option>
+
+								<option value='HAB2'
+									>
+									신입간호사
+								</option>
+
+								<option value='HAC0'
+									>
+									체외순환사
+								</option>
+
+								<option value='HAC1'
+									>
+									방사선사
+								</option>
+
+								<option value='HAC2'
+									>
+									병리사
+								</option>
+
+								<option value='HAC3'
+									>
+									물리치료사
+								</option>
+
+								<option value='HAC4'
+									>
+									작업치료사
+								</option>
+
+								<option value='HAC5'
+									>
+									언어치료사
+								</option>
+
+								<option value='HAC6'
+									>
+									치위생사
+								</option>
+
+								<option value='HAC7'
+									>
+									치기공사
+								</option>
+
+								<option value='HAC8'
+									>
+									안과검사기사
+								</option>
+
+								<option value='HAC9'
+									>
+									청력검사기사
+								</option>
+
+								<option value='HACA'
+									>
+									운동처방사
+								</option>
+
+								<option value='HACB'
+									>
+									의공학기사
+								</option>
+
+								<option value='HACC'
+									>
+									인턴사원
+								</option>
+
+								<option value='HACD'
+									>
+									응급구조사
+								</option>
+
+								<option value='HACZ'
+									>
+									기타기사직
+								</option>
+
+								<option value='HAD1'
+									>
+									약사
+								</option>
+
+								<option value='HAD3'
+									>
+									영양사
+								</option>
+
+								<option value='HAD4'
+									>
+									사서
+								</option>
+
+								<option value='HAD5'
+									>
+									시청각기사
+								</option>
+
+								<option value='HAD6'
+									>
+									보건의료정보관리사
+								</option>
+
+								<option value='HAE10'
+									>
+									운전원
+								</option>
+
+								<option value='HAE11'
+									>
+									상례사
+								</option>
+
+								<option value='HAE16'
+									>
+									진료보조
+								</option>
+
+								<option value='HAE8'
+									>
+									조리사
+								</option>
+
+
+							</select>
+						</div>
+					</dd>
+					<dt>입력검색</dt>
+					<dd>
+						<div class="input-selectbox">
+							<select name="ST" >
+    <option value="ALL">전체</option>
+    <option value="TT">제목</option>
+    <option value="CN">내용</option>
+</select>
+
+						</div>
+						<input type="text" name="SW" class="input-text" title="검색란" value="" />
+						<button type="submit" class="button button-small button-blue" role="button">
+							<span class="button-text">검색</span>
+						</button>
+					</dd>
+				</dl>
+			</div>
+		</form>
+
+		<table class="table-default board-list">
+			<caption>채용공고 목록</caption>
+			<colgroup>
+				<col style="width: 70px" />
+				<col style="width: 80px;" />
+				<col style="width: 120px;" />
+				<col />
+				<col style="width: 120px;" />
+				<col style="width: 80px;" />
+				<col style="width: 180px;" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">번호</th>
+					<th scope="col">구분</th>
+					<th scope="col">직종</th>
+					<th scope="col">제목</th>
+					<th scope="col">접수기간 </th>
+					<th scope="col">마감일</th>
+					<th scope="col">접수형태/진행상황</th>
+				</tr>
+			</thead>
+			<tbody>
+
+
+				<tr>
+					<td>
+						공지
+
+					</td>
+					<td>
+
+
+						무관
+					</td>
+					<td>응급구조사</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020HACD0001&cPage=2" class="link">
+							응급구조학과 계약직 응급구조사 채용
+						</a>
+					</td>
+					<td>
+
+						2020.12.03<br />~
+						2020.12.17
+
+					</td>
+					<td class="deadline-today">
+
+
+
+							D-7
+
+
+
+					</td>
+					<td>
+						온라인접수
+
+
+								<span class="button button-small04 button-blue ico_processing">진행중</span>
+
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						공지
+
+					</td>
+					<td>
+
+
+						무관
+					</td>
+					<td>기타</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020AAHF0062&cPage=2" class="link">
+							2021년 삼성서울병원 일반의 채용
+						</a>
+					</td>
+					<td>
+
+						2020.11.30<br />~
+						2020.12.31
+
+					</td>
+					<td class="deadline-today">
+
+
+
+							D-21
+
+
+
+					</td>
+					<td>
+
+						방문접수
+
+								<span class="button button-small04 button-blue ico_processing">진행중</span>
+
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						공지
+
+					</td>
+					<td>
+						경력
+
+
+					</td>
+					<td>연구원</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020EAJ0036&cPage=2" class="link">
+							2020년-2차 임상의학연구소 경력직 CRA 채용 (연장)
+						</a>
+					</td>
+					<td>
+
+						2020.11.24<br />~
+						2020.12.14
+
+					</td>
+					<td class="deadline-today">
+
+
+
+							D-4
+
+
+
+					</td>
+					<td>
+						온라인접수
+
+
+								<span class="button button-small04 button-blue ico_processing">진행중</span>
+
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						공지
+
+					</td>
+					<td>
+
+
+						무관
+					</td>
+					<td>기타</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020AAHF0058&cPage=2" class="link">
+							삼성서울병원 내원 환자 안내 아르바이트 채용
+						</a>
+					</td>
+					<td>
+
+						2020.11.18<br />~
+						2020.12.31
+
+					</td>
+					<td class="deadline-today">
+
+
+
+							D-21
+
+
+
+					</td>
+					<td>
+						온라인접수
+
+
+								<span class="button button-small04 button-blue ico_processing">진행중</span>
+
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+
+
+							83
+
+					</td>
+					<td>
+
+
+						무관
+					</td>
+					<td>병리사</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020HAC20030&cPage=2" class="link">
+							병리검사실 세포병리파트 계약직 병리사 채용
+						</a>
+					</td>
+					<td>
+
+						2020.12.03<br />~
+						2020.12.09
+
+					</td>
+					<td class="deadline-today">
+
+
+						종료
+
+					</td>
+					<td>
+						온라인접수
+
+
+
+								<span class="button button-small04 button-dark02 ico_processing">지원마감</span>
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+
+
+							82
+
+					</td>
+					<td>
+
+
+						무관
+					</td>
+					<td>기타</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020AAHF0063&cPage=2" class="link">
+							삼성서울병원 계약직 상근 보조원 1월 정기 채용(스포츠의학실 外)
+						</a>
+					</td>
+					<td>
+
+						2020.12.02<br />~
+						2020.12.09
+
+					</td>
+					<td class="deadline-today">
+
+
+						종료
+
+					</td>
+					<td>
+						온라인접수
+
+
+
+								<span class="button button-small04 button-dark02 ico_processing">지원마감</span>
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+
+
+							81
+
+					</td>
+					<td>
+
+
+						무관
+					</td>
+					<td>간호사</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020HAB0190&cPage=2" class="link">
+							간호본부 외래 계약직 간호사 21年 1월 정기채용
+						</a>
+					</td>
+					<td>
+
+						2020.12.01<br />~
+						2020.12.07
+
+					</td>
+					<td class="deadline-today">
+
+
+						종료
+
+					</td>
+					<td>
+						온라인접수
+
+
+
+								<span class="button button-small04 button-dark02 ico_processing">지원마감</span>
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+
+
+							80
+
+					</td>
+					<td>
+						경력
+
+
+					</td>
+					<td>기타기사직</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020HACZ0008&cPage=2" class="link">
+							방사선종양학과 경력직 의학물리사 채용
+						</a>
+					</td>
+					<td>
+
+						2020.11.30<br />~
+						2020.12.07
+
+					</td>
+					<td class="deadline-today">
+
+
+						종료
+
+					</td>
+					<td>
+						온라인접수
+
+
+
+								<span class="button button-small04 button-dark02 ico_processing">지원마감</span>
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+
+
+							79
+
+					</td>
+					<td>
+
+
+						무관
+					</td>
+					<td>기타</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020AAHF0061&cPage=2" class="link">
+							삼성서울병원 계약직 보조원 채용(4시간 근무자)
+						</a>
+					</td>
+					<td>
+
+						2020.11.30<br />~
+						2020.12.03
+
+					</td>
+					<td class="deadline-today">
+
+
+						종료
+
+					</td>
+					<td>
+						온라인접수
+
+
+
+								<span class="button button-small04 button-dark02 ico_processing">지원마감</span>
+
+						</span>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+
+
+							78
+
+					</td>
+					<td>
+						경력
+
+
+					</td>
+					<td>방사선사</td>
+					<td class="text-left">
+						<a href="/home/recruit/recruitInfo/recruitNoticeView.do?RECRUIT_CD=2020HAC10031&cPage=2" class="link">
+							방사선종양학과 경력직 방사선사(선량설계) 채용 (연장)
+						</a>
+					</td>
+					<td>
+
+						2020.11.27<br />~
+						2020.12.10
+
+					</td>
+					<td class="deadline-today">
+
+
+						종료
+
+					</td>
+					<td>
+						온라인접수
+
+
+
+								<span class="button button-small04 button-dark02 ico_processing">지원마감</span>
+
+						</span>
+					</td>
+				</tr>
+
+
+
+
+
+			</tbody>
+		</table>
+
+		<div class="board-util">
+			<nav class="pagination" role="navigation">
+				<nav class='pageNav'><a class="control first" href="/home/recruit/recruitInfo/recruitNotice.do?cPage=01">first
+</a><a class="control prev">prev</a><a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=01" title="1페이지로">1</a>
+ <strong class="active">2</strong>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=03" title="3페이지로">3</a>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=04" title="4페이지로">4</a>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=05" title="5페이지로">5</a>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=06" title="6페이지로">6</a>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=07" title="7페이지로">7</a>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=08" title="8페이지로">8</a>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=09" title="9페이지로">9</a>
+ <a href="/home/recruit/recruitInfo/recruitNotice.do?cPage=010" title="10페이지로">10</a>
+<a class="control next">next</a><a class="control last" href="/home/recruit/recruitInfo/recruitNotice.do?cPage=010">last</a></nav>
+			</nav>
+		</div>
+
+	</section>
+
+
+
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+<footer id="footer" role="contentinfo"> <!-- Footer [S] -->
+		<div class="canexpanded">
+			<div class="inner-wrap">
+				<div class="foot-link"> <!-- 2017-06-05 nav div로 -->
+					<a href="/home/main/index.do" target="_blank">삼성서울병원</a>
+
+					<a href="/home/healthMedical/main.do" target="_blank">건강의학센터</a>
+
+
+
+					<a href="/home/hbv/main.do" target="_blank">심장뇌혈관병원</a>
+
+
+
+					<a href="/home/cancer/main/index.do" target="_blank">암병원</a>
+
+
+
+					<a href="/home/proton/main/index.do" target="_blank" title="새창열림">양성자치료센터</a>
+
+
+
+					<!-- <a href="/home/future/main/index.do" target="_blank">미래의학연구원</a> -->
+
+
+
+
+					<a href="/home/funerals/main/index.do" target="_blank">장례식장</a>
+
+					<!-- 2017-06-05 <button type="button" class="button button-icon button-footer-close" role="button">
+						<i class="iconset icon-close02" aria-hidden="true"></i>
+						<span class="button-text visually-hidden">닫기</span>
+					</button> -->
+					<!-- 아래 부서호출 패밀리 버튼 두개 신규 생성 2017-06-05 -->
+					<div class="expand-link-new">
+						<button class="btn-expand-outer btn-expand-dept">센터홈페이지</button><!-- 절대엔터치치마시오 --><button class="btn-expand-outer btn-expand-fm">패밀리사이트</button>
+					</div>
+				</div>
+				<div class="outer-link-new"><!-- 2017-06-05 -->
+					<div class="dept-link dept-link-new">
+						<h3>센터 홈페이지 목록</h3>
+						<a href="#" class="btn_cls_layerlink"><span style="position:absolute;top:-999px;font-size:1px;opacity:0;">레이어 닫기</span></a>
+						<div class="wrap_center_column wrap_center_column01">
+							<h4><a href="/home/cancer/main/index.do" target="_blank">암병원</a></h4>
+							<ul class="first-one">
+								<li><a href="/home/cancer/carecenter/liver.do" target="_blank" title="새창 열림">간암센터</a></li>
+								<li><a href="/home/cancer/carecenter/brainTumor.do" target="_blank" title="새창열림">뇌종양센터</a></li>
+								<li><a href="/home/cancer/carecenter/colorectal.do" target="_blank" title="새창열림">대장암센터</a></li>
+								<li><a href="/home/cancer/carecenter/headNeck.do" target="_blank" title="새창열림">두경부암센터</a></li>
+								<li><a href="/home/cancer/carecenter/gynecologic.do" target="_blank" title="새창열림">부인암센터</a></li>
+								<li><a href="/home/cancer/carecenter/urological.do" target="_blank" title="새창 열림">비뇨암센터</a></li>
+								<li><a href="/home/cancer/carecenter/gastric.do" target="_blank" title="새창 열림">위암센터</a></li>
+								<li><a href="/home/cancer/carecenter/breast.do" target="_blank" title="새창 열림">유방암센터</a></li>
+								<li><a href="/home/cancer/carecenter/cholangioma.do" target="_blank" title="새창 열림">췌장담도암센터</a></li>
+								<li><a href="/home/cancer/carecenter/special.do" target="_blank" title="새창 열림">희귀암센터</a></li>
+								<li><a href="/home/cancer/carecenter/lung.do" target="_blank" title="새창 열림">폐식도암센터</a></li>
+								<li><a href="/home/cancer/carecenter/blood.do" target="_blank" title="새창 열림">혈액암센터</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=RT" target="_blank" title="새창 열림">방사선종양학과</a></li>
+								<li><a href="/home/proton/main/index.do" target="_blank" title="새창 열림">양성자치료센터</a></li>
+								<li><a href="/home/cancer/carecenter/cure.do" target="_blank" title="새창 열림">암치유센터</a></li>
+								<li><a href="/home/cancer/carecenter/outpatientTreatment.do" target="_blank" title="새창 열림">통원치료센터</a></li>
+
+							</ul>
+						</div><!-- //wrap_center_column01 -->
+						<div class="wrap_center_column wrap_center_column02">
+							<div class="inner_center_columnpart">
+								<h4><a href="/home/hbv/main.do" target="_blank">심장뇌혈관병원</a></h4>
+								<ul>
+									<li><a href="/home/hbv/center/heart/intro/html.do" target="_blank" title="새창열림">심장센터</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=ARRC" target="_blank" title="새창열림">부정맥센터</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=PSC" target="_blank" title="새창 열림">뇌졸중센터</a></li>
+									<li><a href="/home/hbv/center/blood/intro/html.do" target="_blank" title="새창열림">혈관센터</a></li>
+									<li><a href="/home/hbv/center/rehabilitation/intro/html.do" target="_blank" title="새창열림">예방재활센터</a></li>
+									<li><a href="/home/hbv/center/imaging/intro/html.do" target="_blank" title="새창열림">이미징센터</a></li>
+								</ul>
+							</div>
+							<div class="inner_center_columnpart">
+								<h4><a href="/home/reservation/deptSearch2.do?DP_TYPE=C" target="_blank">특성화센터</a></h4>
+								<ul>
+									<li><a href="/dept/main/index.do?DP_CODE=NREHNS" target="_blank" title="새창열림">뇌신경센터</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=FETC" target="_blank" title="새창 열림">모아집중치료센터</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=PDC" target="_blank" title="새창열림">소아청소년센터</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=DDC" target="_blank" title="새창열림">소화기센터</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=OTC" target="_blank" title="새창열림">장기이식센터</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=ST" target="_blank" title="새창열림">척추종양센터</a></li>
+								</ul>
+							</div>
+						</div><!-- //wrap_center_column02 -->
+
+
+						<div class="wrap_center_column wrap_center_column03">
+							<div class="inner_center_columnpart">
+							<h4><a href="/home/reservation/deptSearch2.do?DP_TYPE=C" target="_blank">기능센터</a></h4>
+							<ul>
+								<li><a href="/dept/main/index.do?DP_CODE=NS2" target="_blank" title="새창열림">감마나이프센터</a></li>
+								<li><a href="http://blog.naver.com/cipacsmc" target="_blank" title="새창 열림">감염병대응센터</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=ROB" target="_blank" title="새창열림">로봇수술</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=SCC" target="_blank" title="새창열림">스포츠의학센터</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=AMYLOID" target="_blank" title="새창열림">아밀로이드증센터</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=ATP" target="_blank" title="새창열림">아토피환경보건센터</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=DEP" target="_blank" title="새창열림">우울증센터</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=CBT61" target="_blank" title="새창열림">인공와우센터</a></li>
+							</ul>
+							</div>
+							<div class="inner_center_columnpart">
+								<h4><a href="/home/reservation/deptSearch.do?DP_TYPE=O" target="_blank" title="새창열림">진료과 / 클리닉</a></h4>
+								<ul>
+									<li><a href="/home/reservation/deptSearch.do?DP_TYPE=O" target="_blank" title="새창열림">진료과 홈페이지 (찾기)</a></li>
+									<li><a href="/home/reservation/deptSearch3.do?DP_TYPE=N" target="_blank" title="새창열림">클리닉 홈페이지 (찾기)</a></li>
+								</ul>
+							</div>
+
+						</div><!-- //wrap_center_column03 -->
+						<div class="wrap_center_column wrap_center_column04">
+							<div class="inner_center_columnpart">
+								<h4>진료지원</h4>
+								<ul>
+									<li><a href="/dept/main/index.do?DP_CODE=NSD" target="_blank" title="새창 열림">간호본부</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=HHC" target="_blank" title="새창 열림">가정간호실</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=SWK" target="_blank" title="새창열림">사회복지팀</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=PH" target="_blank" title="새창열림">약제부</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=DD2" target="_blank" title="새창열림">영양팀</a></li>
+									<!-- <li><a href="/dept/main/index.do?DP_CODE=N" target="_blank" title="새창열림">투석실</a></li> -->
+								</ul>
+							</div>
+							<div class="inner_center_columnpart">
+								<h4>교육센터</h4>
+								<ul>
+									<li><a href="/dept/main/index.do?DP_CODE=ED" target="_blank" title="새창열림">교육인재개발실(Anymed)</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=DM" target="_blank" title="새창 열림">당뇨교육실</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=HS" target="_blank" title="새창열림">병원학교</a></li>
+									<li><a href="/dept/main/index.do?DP_CODE=CIC" target="_blank" title="새창열림">암교육센터</a></li>
+									<li><a href="https://library.samsunghospital.com" target="_blank" title="새창열림">의학정보팀</a></li>
+								</ul>
+							</div>
+						</div><!-- //wrap_center_column04 -->
+						<div class="wrap_center_column wrap_center_column05">
+							<h4>연구센터</h4>
+							<ul>
+
+								<li><a href="/dept/main/index.do?DP_CODE=BP7" target="_blank" title="새창 열림">삼성유전체연구소</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=CTG" target="_blank" title="새창열림">임상시험 글로벌선도센터</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=1812J2" target="_blank" title="새창열림">임상역학연구센터<br>(Center for Clinical Epidemiology)</a></li>
+								<li><a href="/dept/main/index.do?DP_CODE=CEC" target="_blank" title="새창열림">임상의학연구소</a></li>
+								<li><a href="http://www.samsunglab.org" target="_blank" title="새창열림">삼성LAB 온라인수탁</a></li>
+								<!-- <li><a href="/dept/main/index.do?DP_CODE=ARRC" target="_blank" title="새창열림">줄기세포재생의학연구소</a></li> -->
+								<li><a href="http://www.e-irb.com/index.jsp?irbcd=45d2c06bd44bde5a0ea299c973f97684" target="_blank" title="새창 열림">e-IRB</a></li>
+							</ul>
+						</div><!-- //wrap_center_column05 -->
+					</div>
+					<div class="family-link family-link-new"><!-- 2017-06-05 -->
+						<h3>패밀리사이트</h3>
+						<!-- 2017-06-05 버튼 추가 --><a href="#" class="btn_cls_layerlink"><span style="position:absolute;top:-999px;font-size:1px;opacity:0;">레이어 닫기</span></a>
+						<ul>
+							<li><a href="http://www.smc.or.kr" target="_blank" title="새창 열림">삼성의료원</a></li>
+							<li><a href="http://www.kbsmc.co.kr" target="_blank" title="새창 열림">강북삼성병원</a></li>
+							<li><a href="http://smc.skku.edu" target="_blank" title="새창 열림">삼성창원병원</a></li>
+							<li><a href="https://srm.samsunghospital.com" target="_blank" title="새창 열림">삼성의료원 열린구매</a></li>
+							<li><a href="http://www.skkumed.ac.kr" target="_blank" title="새창 열림">성균관대학교 의과대학</a></li>
+							<li><a href="/dept/main/index.do?DP_CODE=MHI" target="_blank" title="새창 열림">사회정신건강연구소</a></li>
+							<li><a href="http://www.refer.co.kr"  target="_blank" title="새창 열림">SMC파트너즈센터</a></li>
+						</ul>
+					</div>
+					<!-- 2017-06-05 <div class="language-link">
+						<h3>Languages</h3>
+						<ul>
+							<li><a href="http://english.samsunghospital.com" target="_blank" title="새창열림">ENGLISH</a></li>
+							<li><a href="http://japanese.samsunghospital.com" target="_blank" title="새창열림">JAPANESE</a></li>
+							<li><a href="http://chinese.samsunghospital.com" target="_blank" title="새창열림">CHINESE</a></li>
+							<li><a href="http://arabic.samsunghospital.com" target="_blank" title="새창열림">ARABIC</a></li>
+							<li><a href="http://russian.samsunghospital.com" target="_blank" title="새창열림">RUSSIAN</a></li>
+							<li><a href="http://french.samsunghospital.com" target="_blank" title="새창열림">FRENCH</a></li>
+							<li><a href="http://german.samsunghospital.com" target="_blank" title="새창열림">GERMAN</a></li>
+							<li><a href="http://hindi.samsunghospital.com" target="_blank" title="새창열림">HINDI</a></li>
+							<li><a href="http://mongolic.samsunghospital.com" target="_blank" title="새창열림">MONGOLIAN</a></li>
+							<li><a href="http://portuguese.samsunghospital.com" target="_blank" title="새창열림">PORTUGUESE</a></li>
+							<li><a href="http://spainish.samsunghospital.com" target="_blank" title="새창열림">SPANISH</a></li>
+							<li><a href="http://thai.samsunghospital.com" target="_blank" title="새창열림">THAI</a></li>
+							<li><a href="http://vietnamese.samsunghospital.com" target="_blank" title="새창열림">VIETNAMESE</a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="inner-wrap">
+			<div class="foot-link sub-foot">
+
+
+				<a href="/home/member/agreement.do">회원약관</a>
+				<a href="/home/member/protect.do" class="link-protect"><strong>개인정보처리방침</strong></a>
+
+
+
+				<a href="/home/popup/pop_right.do" onclick="window.open(this.href,'onechk','width=650, height=700, scrollbars=yes');return false;">환자의 권리와 의무</a>
+
+
+
+				<a href="/home/recruit/sitemap.do" class="expand">사이트맵</a>
+
+			</div>
+
+
+			<div class="our-sns">
+				<div class="outer_secure_marknew">
+					<a href="/home/popup/isms.do" class="isms_pop_new" onclick="window.open(this.href,'onechk01','width=621, height=880, top=0, left=100, scrollbars=yes');return false;" title="새창열림" ><span class="visuallyhidden">정보보호관리체계인증 상세팝업</span></a>
+				</div>
+				<div class="inner_our_sns">
+					<a href="https://twitter.com/mySMC" target="_blank" class="footer-sns-twitter"><span class="visually-hidden">트위터</span></a>
+					<a href="http://www.facebook.com/SamsungMedicalCenter" target="_blank" class="footer-sns-facebook"><span class="visually-hidden">페이스북</span></a>
+					<a href="http://www.ohhappysmc.com" target="_blank" class="footer-sns-blog"><span class="visually-hidden">블로그</span></a>
+					<a href="http://www.youtube.com/SamsungMedicalCenter" target="_blank" class="footer-sns-youtube"><span class="visually-hidden">유튜브</span></a>
+				</div>
+
+
+			</div>
+
+			<address>서울특별시 강남구 일원로 81 (06351) 삼성서울병원  /  대표전화 : 1599-3114  /  사업자등록번호 : 213-82-05096 권오정</address>
+			<!-- 클래스 추가 2016-11 copy_with_authmark--> <p class="copy copy_with_authmark">copyright&copy;1996-2015 by Samsung Medical Center. All rights reserved.</p>
+
+			<!-- 인증마크 추가 2016-11 -->
+
+			<script type="text/javascript">
+			//<![CDATA[
+				$(document).ready(function(){
+					if ($('body .quick-navigation').length > 0)//본원  확인용 (로그인은 적용안됨)
+					{
+						$('body').addClass('quick-navi-used');
+					}
+					$('#footer .canexpanded').addClass('with_authmark');//1359에서 사이즈 줄어드는 사이트만 개별수정필요
+					$('#footer .copy_with_authmark').addClass('new_footer_main')//2017-06-05 추가 메인 new_footer_main, 양성자 new_footer_proton, 해피카페 new_footer_happy 클래스 다름 각각 jsp에 다르게 넣어주기
+				});
+			//]]>
+			</script>
+			<!-- 인증마크 추가 2016-11 -->
+
+		</div>
+		<script type="text/javascript" src="/_newhome/ui/home/static/js/uijs_pbonly.js"></script><!-- 2017-06-05 신규파일 추가 -->
+
+
+	</footer> <!-- Footer [E] -->
+<!-- back to top -->
+	<a href="#top" class="back-to-top" data-spy="affix" data-offset-top="105" data-offset-bottom="250">맨 위로</a>
+
+<!-- Facebook Pixel Code 20170818 START-->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '189293891611819');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" src="https://www.facebook.com/tr?id=189293891611819&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code  20170818 END -->
+
+	</div> <!-- Wrapper [E] -->
+
+	<script src="/_newhome/ui/_component/static/js/plugins.js"></script>
+	<script src="/_newhome/ui/recruit/static/js/script.js"></script>
+
+</body>
+</html>

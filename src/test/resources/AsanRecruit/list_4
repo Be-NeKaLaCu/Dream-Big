@@ -1,0 +1,11 @@
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2578', '20200338'); return false;"><span>2021년 치과의사 전공의(레지던트) 추가 채용</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.08(화) 00:00 ~ 2020.12.10(목) 17:00
+                    </span>
+                  </div>
+                </li>

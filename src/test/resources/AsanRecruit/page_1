@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xml:lang="ko">
+<head>
+
+<title>입사지원 | 채용공고 | 서울아산병원</title>
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!--=== CSS ===-->
+<link href="/recruit/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/career.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/popup.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/infor.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/hospitalInfo.css" rel="stylesheet" type="text/css" />
+<link href="/recruit/css/lib/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" /><!-- datepicker -->
+<link href="/recruit/css/common_recruit.css" rel="stylesheet" type="text/css" />
+
+<link rel="shortcut icon" href="/recruit/images/common/favi.ico" />
+
+<!--=== JavaScript ===-->
+<script type="text/javascript" src="/recruit/js/libs/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/recruit/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="/recruit/js/libs/jquery-carousel_1.1.js"></script>
+<script type="text/javascript" src="/recruit/js/libs/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/recruit/js/libs/jquery.flexslider.js"></script>
+<script type="text/javascript" src="/recruit/js/template.js"></script>
+<script type="text/javascript" src="/recruit/js/common.js"></script>
+<script type="text/javascript" src="/recruit/js/medical.js"></script>
+<script type="text/javascript" src="/recruit/js/js-modal.js"></script>
+<script type="text/javascript" src="/recruit/js/jquery-ui-datepicker-korean.js"></script>
+
+<script type="text/javascript" src="/recruit/js/employ.js"></script>
+<script type="text/javascript" src="/recruit/js/employ/common_recruit.js?ver=3"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63546952-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			var msg = '';
+
+			if(msg != ''){
+				alert(msg);
+			}
+
+			if($("#code1").val() != ""){
+
+				fnSelectFirst();
+
+				if($("#code2").val() != ""){
+
+					var code2 = $("#code2").val();
+
+					$("#codeTwo").val(code2);
+
+					fnSelectTwo();
+
+				}
+
+				if($("#code3").val() != ""){
+
+					fnSelectTwo();
+
+					var code3 = $("#code3").val();
+					$("#codeThree").val(code3);
+
+				}
+
+
+			}
+
+			$(document).on("change", "#codeFirst", function(){
+				fnSelectFirst();
+			});
+
+			$(document).on("change", "#codeTwo", function(){
+				fnSelectTwo();
+			});
+
+		});
+
+
+		function fnSelectFirst() {
+
+			var val = $("#codeFirst").val();
+			var codeTwo = $("#codeTwo");
+			var codeThree = $("#codeThree");
+
+			if(val == ""){
+
+				$("#codeTwo option").not("[value='']").remove();
+				$("#codeThree option").not("[value='']").remove();
+
+			}else{
+				$.ajax("/recruit/career/recruitCodeTwo.do?val="+escape(val), {
+							type : 'POST',
+							dataType : 'json',
+							cache : false,
+							async : false,
+							success : function(data) {
+
+								if(data.codeTotal > 0) {
+
+									var html = "";
+									for(var i=0; i<data.list.length; i++) {
+										var codeId = data.list[i].codeId;
+										var codeName = data.list[i].codeName;
+										html += "<option value=\""+codeId+"\">"+codeName+"</option>";
+									}
+								$("#codeTwo option").not("[value='']").remove();
+								$("#codeThree option").not("[value='']").remove();
+								 codeTwo.append(html);
+								}
+							},
+							error : function(data) {
+								alert("일시적인 오류가 발생하였습니다. 잠시후에 다시 시도해주세요.");
+							}
+						});
+			}
+
+		}
+
+
+		function fnSelectTwo() {
+
+			var val = $("#codeTwo").val();
+			var codeThree = $("#codeThree");
+
+			if(val == ""){
+
+				$("#codeThree option").not("[value='']").remove();
+
+			}else{
+
+				$.ajax("/recruit/career/recruitCodeTwo.do?val="+escape(val), {
+							type : 'POST',
+							dataType : 'json',
+							cache : false,
+							async : false,
+							success : function(data) {
+
+								if(data.codeTotal > 0) {
+
+									var html = "";
+									for(var i=0; i<data.list.length; i++) {
+										var codeId = data.list[i].codeId;
+										var codeName = data.list[i].codeName;
+										html += "<option value=\""+codeId+"\">"+codeName+"</option>";
+									}
+
+								$("#codeThree option").not("[value='']").remove();
+								 codeThree.append(html);
+								}
+							},
+							error : function(data) {
+								alert("일시적인 오류가 발생하였습니다. 잠시후에 다시 시도해주세요.");
+							}
+						});
+			}
+
+		}
+
+		function fnList(pageIndex) {
+			$('#pageIndex').val(pageIndex);
+			$('#searchForm').attr("action", "/recruit/career/list.do").submit();
+		}
+
+		function fnDetail(seq, scheduleno) {
+			$("#seq").val(seq);
+			$("#scheduleno").val(scheduleno);
+			$('#searchForm').attr("action", "/recruit/career/view.do").submit();
+		}
+	</script>
+
+
+</head>
+<body>
+
+
+<!-- skipToContent -->
+<div id="skipToContent">
+	<a href="#gnb">주메뉴바로가기</a>
+	<a href="#content">본문바로가기</a>
+</div>
+<!-- //skipToContent -->
+<div id="recruitWrap">
+
+	<!-- 공통 배너 :: START -->
+
+
+
+	<!-- 공통 배너 :: END -->
+
+	<div id="headerWrap">
+		<div class="innerWrap">
+			<p class="bannerBtn"><a href="#" id="topBnrOpen"><img src="/recruit/images/btn/btn_topOpen.png" alt="open" /></a></p>
+			<ul class="utillBtn">
+				<li><a href="http://www.amc.seoul.kr/asan/main.do" target="_blank"><img src="/recruit/images/btn/btn_topAMC.gif" alt="서울아산병원" /></a></li>
+				<li class="last"><a href="http://www.amc.seoul.kr/asan/hospitalguide/location/location.do"  target="_blank"><img src="/recruit/images/btn/btn_topMap.gif" alt="오시는길" /></a></li>
+			</ul>
+
+			<div class="siteTitle">
+			  <h1 class="logo">
+			    <a href="/recruit/main.do"><img src="/recruit/images/common/logo.png" alt="서울아산병원 로고" /></a>
+			  </h1>
+			  <h2 class="titles">
+			    <a href="/recruit/main.do">채용</a>
+			  </h2>
+			</div>
+
+
+
+<div id="gnb" tabindex="0">
+	<ul class="frontNavi">
+
+		<li class="m01"><a href="/recruit/career/list.do">채용공고</a>
+			<div class="depth2 snbNav0">
+				<ul class="snbSubNav">
+
+					<li class="current "><a href="/recruit/career/list.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-채용공고-입사지원');">입사지원</a></li>
+					<li class=""><a href="/recruit/myCareer/login.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-채용공고-지원현황조회/수정');">지원현황조회/수정</a></li>
+					<li class="lastSubBtn"><a href="/recruit/careerInn/login.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-채용공고-원내공모');">원내공모</a></li>
+				</ul>
+			</div><!-- // depth2 -->
+		</li>
+
+		<li class="m02"><a href="/recruit/pass/search/login.do">합격조회</a>
+			<div class="depth2 snbNav1">
+				<ul class="snbSubNav">
+
+					<li class=""><a href="/recruit/pass/search/login.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-합격조회-합격자조회');">합격자조회</a></li>
+					<li class=""><a href="/recruit/pass/find/login.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-합격조회-비밀번호재발급');">비밀번호재발급</a></li>
+					<li class="lastSubBtn"><a href="/recruit/info/passList.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-합격조회-합격자공지사항');">합격자공지사항</a></li>
+				</ul>
+			</div><!-- // depth2 -->
+		</li>
+
+		<li class="m03"><a href="/recruit/info/mission.do">채용안내</a>
+			<div class="depth2 snbNav2">
+				<ul class="snbSubNav">
+
+					<li class=""><a href="/recruit/info/mission.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-채용안내-미션/비전/핵심가치');">미션/비전/핵심가치</a></li>
+					<li class=""><a href="/recruit/info/welfare.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-채용안내-복리후생');">복리후생</a></li>
+					<li class=""><a href="/recruit/info/process.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-채용안내-채용절차');">채용절차</a></li>
+					<li class="lastSubBtn"><a href="/recruit/info/faqList.do" onclick="ga('send', 'event', '서브-GNB', 'CLICK', '서브-GNB-채용안내-채용FAQ');">채용FAQ</a></li>
+				</ul>
+			</div><!-- // depth2 -->
+		</li>
+
+		<li class="m03"><a href="/recruit/info/hospitalInfo.do" >재단/병원소개</a></li>
+	</ul>
+</div>
+		</div>
+	</div> <!-- // headerWrap -->
+	<div id="outerContent">
+
+
+<!-- Content :: START -->
+
+<div id="innerContent">
+  <div class="innerWrapBorder clearfix">
+    <!-- LNB :: START -->
+
+<div id="lnb" tabindex="0">
+
+	<h2 class="lnbTitle">채용공고</h2>
+	<ul class="depth1">
+
+		<li class="current">
+			<a href="/recruit/career/list.do">입사지원</a>
+		</li>
+
+		<li >
+			<a href="/recruit/myCareer/login.do">지원현황조회/수정</a>
+		</li>
+
+		<li >
+			<a href="/recruit/careerInn/login.do">원내공모</a>
+		</li>
+
+	</ul><!-- // lnb -->
+
+</div>
+<script type="text/javascript">
+
+$('#lnb').lnbController(0, 99);
+
+</script>
+    <!-- LNB :: END -->
+
+    <div id="content" tabindex="0" class="defaultCont"> <!-- lnb없는 레이아웃일 경우 :: fullCont 변경 -->
+      <div class="subContHeader">
+        <h3 class="subTitle">입사지원 <span style="font-size:14px;"><!-- (900px * 800px (width * min-height)) --></span></h3>
+      </div>
+
+      <div class="recruitListWrap" style="margin-bottom:-9px;">
+
+        <!-- 상단 검색바 -->
+        <div class="careerSearchSec">
+          <form id="searchForm" method="get" action="/recruit/career/list.do">
+          <input id="seq" name="seq" type="hidden" value=""/><input id="scheduleno" name="scheduleno" type="hidden" value=""/><input id="pageIndex" name="pageIndex" type="hidden" value="1"/>
+          <input type="hidden" id="msg" value=""/>
+          <fieldset>
+            <legend>채용공고 검색</legend>
+             <p>
+              <label for="codeFirst">구분</label>
+              <select id="codeFirst" name="codeFirst" class="selectText" title="구분" setVal="" style="width:100px;">
+                <option value="">--직군--</option>
+
+                  <option value="T04004" >의사직</option>
+
+                  <option value="T04005" >일반직</option>
+
+              </select>
+              <select id="codeTwo" name="codeTwo" class="selectText" title="대직종 구분" setVal=""  style="width:130px;">
+                <option value="">--대직종--</option>
+              </select>
+              <select id="codeThree" name="codeThree" class="selectText" title="소직종 구분" setVal=""  style="width:130px;">
+              <option value="">--소직종--</option>
+              </select>
+            </p>
+            <p style="margin-top:5px;">
+              <label for="searchKeyword">검색</label>
+              <input type="text" class="inputText" name="searchKeyword" id="searchKeyword" value=""/><a href="/recruit/career/notice/list.do" onclick="$('#searchForm').submit(); return false;" class="graySmBtn">검색</a>
+            </p>
+          </fieldset>
+          </form>
+        </div>
+
+        <input type = "hidden" id="code1" name="code1" value='' />
+        <input type = "hidden" id="code2" name="code1" value=''/>
+        <input type = "hidden" id="code3" name="code1" value=''/>
+
+	    <p class="searchResult">
+
+          총 <span class="txtGreenT">92건</span>입니다.
+	    </p>
+
+
+        <!-- 채용 리스트 -->
+        <div class="dayListWrap">
+          <ul class="dayListBox">
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2582', '20200342'); return false;"><span>간호부 간호간병통합병동지원인력 기능직(조무) 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.10(목) 16:30 ~ 2020.12.15(화) 23:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOn"> D-5</span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2581', '20200341'); return false;"><span>관리부 기능직(조무 - 발열모니터링지원) 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.10(목) 16:00 ~ 2020.12.13(일) 23:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOn"> D-3</span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2580', '20200340'); return false;"><span>내과 입원전담전문의(Hospitalist) 초빙</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.08(화) 14:00 ~ 2021.01.31(일) 18:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDay">	D-51</span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2579', '20200339'); return false;"><span>간담도췌외과 입원전담전문의(Hospitalist) 초빙</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.08(화) 13:00 ~ 2020.12.14(월) 17:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOn"> D-3</span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2578', '20200338'); return false;"><span>2021년 치과의사 전공의(레지던트) 추가 채용</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.08(화) 00:00 ~ 2020.12.10(목) 17:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOff"> 마감 </span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2553', '20200315'); return false;"><span>[모집연장/장애인특별채용] 사회복지팀 사회복지사(단시간) 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.11.13(금) 09:00 ~ 2020.12.08(화) 23:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOff"> 마감 </span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2577', '20200337'); return false;"><span>핵의학팀 임상병리사 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.04(금) 09:00 ~ 2020.12.10(목) 23:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOn"> D-0</span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2576', '20200336'); return false;"><span>감염관리팀 간호사 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.03(목) 09:00 ~ 2020.12.09(수) 23:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOff"> 마감 </span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2575', '20200335'); return false;"><span>관리부 기능직(조무 - 발열모니터링지원) 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.01(화) 14:00 ~ 2020.12.06(일) 23:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOff"> 마감 </span>
+
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2568', '20200330'); return false;"><span>[장애인특별채용] 약제팀 기능직(조무) 모집 </span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.11.27(금) 14:00 ~ 2020.12.05(토) 23:00
+                    </span>
+                  </div>
+                </li>
+                <li class="dayListBoxRight">
+
+			            		<span class="dDayOff"> 마감 </span>
+
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        <!-- // 채용 리스트 -->
+
+		    <div class="pagingWrapSec">
+<span class="numPagingSec"><a href="#content" class="nowPage" title="현재페이지"><span>1</span></a><a href="#content" onclick="fnList(2); return false;"><span>2</span></a><a href="#content" onclick="fnList(3); return false;"><span>3</span></a><a href="#content" onclick="fnList(4); return false;"><span>4</span></a><a href="#content" onclick="fnList(5); return false;"><span>5</span></a><a href="#content" onclick="fnList(6); return false;"><span>6</span></a><a href="#content" onclick="fnList(7); return false;"><span>7</span></a><a href="#content" onclick="fnList(8); return false;"><span>8</span></a><a href="#content" onclick="fnList(9); return false;"><span>9</span></a><a href="#content" onclick="fnList(10); return false;"><span>10</span></a></span>
+</div>
+
+      </div>
+
+    </div><!-- // content -->
+  </div><!-- // innerWrap -->
+</div><!-- // innerContent -->
+
+<!-- Content :: END -->
+	</div> <!-- // outerContent -->
+
+	<div id="footerWrap">
+		<div class="innerWrap">
+			<div class="footArea01">
+				<p class="footLogo"><img src="/recruit/images/common/foot_logo.png" alt="서울아산병원 로고" /></p>
+				<address>
+					05505 서울특별시 송파구 올림픽로 43길 88 서울아산병원 / TEL 1688-7575 / <a href="mailto:webmaster@amc.seoul.kr" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-웹마스터 이메일 보내기');">webmaster@amc.seoul.kr</a><br />
+					Copyright@2014 by Asan Medical Center. All Rights reserved.<!-- edit 20140610 -->
+				</address>
+			</div>
+
+			<ul class="linkMenu">
+				<li class="agree"><a href="http://www.amc.seoul.kr/asan/footer/personalInfo.do" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-개인정보처리방침');" target="_blank">개인정보처리방침</a></li>
+				<li><a href="http://www.amc.seoul.kr/asan/footer/agreement.do"  target="_blank" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-이용약관');">이용약관</a></li>
+				<li><a href="http://www.amc.seoul.kr/asan/footer/emailRefusal.do"  target="_blank" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-이메일 주소수집거부');">이메일 주소수집거부</a></li>
+				<li><a href="http://939.co.kr/asan" target="_blank" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-원격지원서비스');">원격지원서비스</a></li>
+				<li class="last"><a href="http://www.amc.seoul.kr/asan/custom/homepageinquiry/homepageInquiryRegistView.do"  target="_blank" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-홈페이지이용문의');">홈페이지이용문의</a></li>
+			</ul>
+        <div class="footerBannerCarousel" id="footerBannerCarousel">
+					<ul>
+						<li><a href="http://www.amc.seoul.kr/asan/information/notice/noticeDetail.do?noticeId=12085" target="_blank" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-배너-서울아산병원, 14년 연속 존경받는 병원 1위');"><img src="/recruit/images/footer/ban01.png" onmouseover="this.src='/recruit/images/footer/ban01on.png'" onmouseout="this.src='/recruit/images/footer/ban01.png'" alt="서울아산병원, 14년 연속 존경받는 병원 1위" title="서울아산병원, 14년 연속 존경받는 병원 1위" /></a></li>
+						<li><a href="http://www.amc.seoul.kr/asan/information/notice/noticeDetail.do?noticeId=12114" target="_blank" onclick="ga('send', 'event', '서브-FOOTER', 'CLICK', '서브-FOOTER-배너-서울아산병원, 정보보호 관리체계 ISMS 인증 획득');"><img src="/recruit/images/footer/ban02.png" onmouseover="this.src='/recruit/images/footer/ban02on.png'" onmouseout="this.src='/recruit/images/footer/ban02.png'" alt="서울아산병원, 정보보호 관리체계 ISMS 인증 획득" title="서울아산병원, 정보보호 관리체계 ISMS 인증 획득" /></a></li>
+					</ul>
+        </div>
+		</div>
+	</div> <!-- // footerWrap -->
+</div> <!-- // asanWrap -->
+
+<!-- // Analytics -->
+</body>
+</html>

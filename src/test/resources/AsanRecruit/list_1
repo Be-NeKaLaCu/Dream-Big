@@ -1,0 +1,11 @@
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2581', '20200341'); return false;"><span>관리부 기능직(조무 - 발열모니터링지원) 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.10(목) 16:00 ~ 2020.12.13(일) 23:00
+                    </span>
+                  </div>
+                </li>

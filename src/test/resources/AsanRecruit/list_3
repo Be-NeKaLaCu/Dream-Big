@@ -1,0 +1,11 @@
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2579', '20200339'); return false;"><span>간담도췌외과 입원전담전문의(Hospitalist) 초빙</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.08(화) 13:00 ~ 2020.12.14(월) 17:00
+                    </span>
+                  </div>
+                </li>

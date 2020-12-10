@@ -1,0 +1,11 @@
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2580', '20200340'); return false;"><span>내과 입원전담전문의(Hospitalist) 초빙</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.08(화) 14:00 ~ 2021.01.31(일) 18:00
+                    </span>
+                  </div>
+                </li>

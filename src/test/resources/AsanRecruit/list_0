@@ -1,0 +1,11 @@
+                <li class="dayListBoxLeft">
+                  <div class="dayListTitle">
+                    <a href="#" onclick="fnDetail('2582', '20200342'); return false;"><span>간호부 간호간병통합병동지원인력 기능직(조무) 모집</span></a>
+                  </div>
+                  <div class="dayListTitle2">
+                    지원기간 :
+                    <span>
+                      2020.12.10(목) 16:30 ~ 2020.12.15(화) 23:00
+                    </span>
+                  </div>
+                </li>

@@ -17,6 +17,11 @@ public class SNURecruit extends RecruitAbstract<Element> {
     private final String baseRecruitUrl = "http://www.snuh.org/about/news/recruit";
 
     @Override
+    protected String getCompanyName() {
+        return "서울대학교병원";
+    }
+
+    @Override
     protected String getRecruitPage(int page) throws IOException, InterruptedException {
         String recruitUrl = getRecruitPageUrl(page);
 

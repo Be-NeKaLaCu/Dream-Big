@@ -14,9 +14,9 @@ public abstract class RecruitAbstract<T> {
             page ++;
             String pageString = getRecruitPage(page);
 
-            ArrayList<T> list = getListSafely(pageString);
+            Iterable<T> list = getListSafely(pageString);
 
-            if (list.size() == 0) {
+            if (list == null) {
                 break;
             }
 
@@ -46,13 +46,13 @@ public abstract class RecruitAbstract<T> {
         return jobs;
     }
 
-    private ArrayList<T> getListSafely(String page) {
-        ArrayList<T> list;
+    private Iterable<T> getListSafely(String page) {
+        Iterable<T> list;
 
         try {
             list = getList(page);
         } catch (Exception e) {
-            list = new ArrayList<>();
+            list = null;
         }
 
         return list;
@@ -60,7 +60,7 @@ public abstract class RecruitAbstract<T> {
 
     abstract protected String getCompanyName();
     abstract protected String getRecruitPage(int page) throws IOException, InterruptedException;
-    abstract protected ArrayList<T> getList(String page);
+    abstract protected Iterable<T> getList(String page);
     abstract protected String getSubject(T item);
     abstract protected String getLink(T item);
     abstract protected LocalDate getStartDate(T item);

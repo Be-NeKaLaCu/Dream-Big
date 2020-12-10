@@ -33,6 +33,7 @@ public abstract class RecruitAbstract<T> {
                 }
 
                 Job job = new Job(
+                        getCompanyName(),
                         getSubject(item),
                         getLink(item),
                         getStartDate(item),
@@ -57,6 +58,7 @@ public abstract class RecruitAbstract<T> {
         return list;
     }
 
+    abstract protected String getCompanyName();
     abstract protected String getRecruitPage(int page) throws IOException, InterruptedException;
     abstract protected ArrayList<T> getList(String page);
     abstract protected String getSubject(T item);

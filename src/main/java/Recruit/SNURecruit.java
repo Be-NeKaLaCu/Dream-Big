@@ -4,11 +4,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import Facade.Http;
+
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -24,14 +22,7 @@ public class SNURecruit extends RecruitAbstract<Element> {
     @Override
     protected String getRecruitPage(int page) throws IOException, InterruptedException {
         String recruitUrl = getRecruitPageUrl(page);
-
-        URI uri = URI.create(recruitUrl);
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder(uri).build();
-
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        return response.body();
+        return Http.get(recruitUrl).body();
     }
 
     String getRecruitPageUrl(int page) {

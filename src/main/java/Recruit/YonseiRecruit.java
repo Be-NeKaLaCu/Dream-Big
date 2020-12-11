@@ -1,19 +1,15 @@
 package Recruit;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashMap;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+import Facade.Http;
 
 public class YonseiRecruit extends RecruitAbstract<JsonElement> {
     private final String baseRecruitUrl = "https://yuhs.recruiter.co.kr/app/jobnotice";
@@ -21,17 +17,15 @@ public class YonseiRecruit extends RecruitAbstract<JsonElement> {
     @Override
     protected String getRecruitPage(int page) throws IOException, InterruptedException {
         String recruitUrl = baseRecruitUrl + "/list.json";
-        String requestBody = "recruitClassSn=&recruitClassName=&jobnoticeStateCode=10&pageSize=10&currentPage=" + page;
 
-        URI uri = URI.create(recruitUrl);
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder(uri)
-                    .header("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
-                    .POST(HttpRequest.BodyPublishers.ofString(requestBody))
-                    .build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        HashMap<String, String> map = new HashMap<>();
+        map.put("recruitClassSn", "");
+        map.put("recruitClassName", "");
+        map.put("jobnoticeStateCode", "10");
+        map.put("pageSize", "10");
+        map.put("currentPage", Integer.toString(page));
 
-        return response.body();
+        return Http.postFormData(recruitUrl, map).body();
     }
     
     @Override

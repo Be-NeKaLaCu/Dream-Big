@@ -4,6 +4,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import Facade.Http;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,7 +20,7 @@ public class AsanRecruit extends RecruitAbstract<Element> {
 
     @Override
     protected String getRecruitPage(int page) throws IOException, InterruptedException {
-        return null;
+        return Http.get(getRecruitPage(page)).body();
     }
 
     protected String getRecruitPageUrl(int page) {

@@ -2,12 +2,8 @@ package Notification;
 
 import Recruit.Job;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import Facade.Http;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.HashMap;
 
 public class SlackNotifier implements INotifier {
@@ -16,21 +12,10 @@ public class SlackNotifier implements INotifier {
         String url = System.getenv("SLACK_HOOK_URL");
 
         String message = makeMessage(job);
-        var map = new HashMap<String, String>() {{
-            put("text", message);
-        }};
+        var map = new HashMap<String, String>();
+        map.put("text", message);
 
-        var objectMapper = new ObjectMapper();
-        String requestBody = objectMapper
-                .writeValueAsString(map);
-
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
-                .build();
-
-        client.send(request, HttpResponse.BodyHandlers.ofString());
+        Http.postJson(url, map);
     }
 
     String makeMessage(Job job) {

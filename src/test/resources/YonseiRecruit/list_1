@@ -1,0 +1,36 @@
+{
+    "recruitTypeCode": "GENERAL",
+    "applyStartDate": {
+        "date": 9,
+        "hours": 0,
+        "seconds": 0,
+        "month": 11,
+        "timezoneOffset": -540,
+        "year": 120,
+        "minutes": 0,
+        "time": 1607439600000,
+        "day": 3
+    },
+    "recruitClassName": "신촌",
+    "systemKindCode": "MRS2",
+    "jobnoticeName": "[일반-신촌]의료기수(정규직전환조건) 의대)송당암연구센터 2011 모집안내",
+    "jobnoticeSn": 41728,
+    "applyEndDate": {
+        "date": 18,
+        "hours": 23,
+        "seconds": 0,
+        "month": 11,
+        "timezoneOffset": -540,
+        "year": 120,
+        "minutes": 59,
+        "time": 1608303540000,
+        "day": 5
+    },
+    "imageFilePath": "",
+    "recruitTypeName": "일반채용",
+    "companySn": 103543,
+    "deadlineCount": 8,
+    "defaultImageUseYn": false,
+    "receiptState": "접수중",
+    "applyPermitCount": 1
+}

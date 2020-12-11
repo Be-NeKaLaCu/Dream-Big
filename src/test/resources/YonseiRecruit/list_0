@@ -1,0 +1,36 @@
+{
+    "recruitTypeCode": "GENERAL",
+    "applyStartDate": {
+        "date": 9,
+        "hours": 0,
+        "seconds": 0,
+        "month": 11,
+        "timezoneOffset": -540,
+        "year": 120,
+        "minutes": 0,
+        "time": 1607439600000,
+        "day": 3
+    },
+    "recruitClassName": "신촌",
+    "systemKindCode": "MRS2",
+    "jobnoticeName": "[일반-신촌]약사(정규직) 세브)약무국 2012 모집",
+    "jobnoticeSn": 42529,
+    "applyEndDate": {
+        "date": 18,
+        "hours": 23,
+        "seconds": 0,
+        "month": 11,
+        "timezoneOffset": -540,
+        "year": 120,
+        "minutes": 59,
+        "time": 1608303540000,
+        "day": 5
+    },
+    "imageFilePath": "",
+    "recruitTypeName": "일반채용",
+    "companySn": 103543,
+    "deadlineCount": 8,
+    "defaultImageUseYn": false,
+    "receiptState": "접수중",
+    "applyPermitCount": 1
+}

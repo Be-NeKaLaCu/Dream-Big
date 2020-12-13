@@ -1,8 +1,16 @@
 package Recruit;
 
+import java.util.ArrayList;
+
 public class RecruitFactory {
-    public static RecruitAbstract<?> make(String type)
+    public static ArrayList<RecruitAbstract<?>> makeAll()
     {
-        return new SNURecruit();
+        var recruits = new ArrayList<RecruitAbstract<?>>();
+
+        recruits.add(new SNURecruit());
+        recruits.add(new YonseiRecruit());
+        recruits.add(new SamsungRecruit());
+
+        return recruits;
     }
 }

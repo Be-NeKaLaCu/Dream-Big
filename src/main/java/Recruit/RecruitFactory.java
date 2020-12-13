@@ -8,7 +8,6 @@ public class RecruitFactory {
         var recruits = new ArrayList<RecruitAbstract<?>>();
 
         recruits.add(new SNURecruit());
-        recruits.add(new AsanRecruit());
         recruits.add(new YonseiRecruit());
         recruits.add(new SamsungRecruit());
 

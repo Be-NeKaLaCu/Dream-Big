@@ -20,7 +20,7 @@ public class AsanRecruit extends RecruitAbstract<Element> {
 
     @Override
     protected String getRecruitPage(int page) throws IOException, InterruptedException {
-        return Http.get(getRecruitPage(page)).body();
+        return Http.get(getRecruitPageUrl(page)).body();
     }
 
     protected String getRecruitPageUrl(int page) {

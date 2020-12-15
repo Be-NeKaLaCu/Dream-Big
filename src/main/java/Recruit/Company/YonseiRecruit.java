@@ -1,10 +1,11 @@
-package Recruit;
+package Recruit.Company;
 
 import java.io.IOException;
 
 import java.time.LocalDate;
 import java.util.HashMap;
 
+import Recruit.RecruitAbstract;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;

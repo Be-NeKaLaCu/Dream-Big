@@ -1,6 +1,8 @@
-package Recruit;
+package Recruit.Company;
 
 
+import Recruit.Company.AsanRecruit;
+import Recruit.Job;
 import org.jsoup.nodes.Element;
 import org.junit.jupiter.api.Test;
 

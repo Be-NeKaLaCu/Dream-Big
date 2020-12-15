@@ -19,7 +19,7 @@ public abstract class RecruitAbstract<T> {
 
             jobs.addAll(jobsInList);
 
-            if (isLastPage(jobsInList, date)) {
+            if (jobsInList.size() == 0 || page > 10) {
                 break;
             }
         }
@@ -58,10 +58,6 @@ public abstract class RecruitAbstract<T> {
         }
 
         return jobs;
-    }
-
-    private boolean isLastPage(ArrayList<Job> jobsInList, LocalDate date) {
-        return jobsInList.size() == 0 || jobsInList.get(jobsInList.size() - 1).startDate.isBefore(date);
     }
 
     abstract protected String getCompanyName();

@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ko-KR">
+<!--<![endif]-->
+<head>
+
+
+<title>고려대학교의료원 온라인 채용시스템</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+<meta http-equiv="content-language" content="ko" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+
+<link rel="stylesheet" type="text/css" href="/css/jade.css?dt=20201215004554" />
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui-1.9.2.custom.css" />
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/ie7.css"><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/css/ie8.css"><![endif]-->
+<!--[if IE 9]><link rel="stylesheet" type="text/css" href="/css/ie9.css"><![endif]-->
+
+<script src="/jscript/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="/jscript/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
+<script src="/jscript/libs/validator.js" type="text/javascript"></script>
+<script src="/jscript/libs/selectbox.js" type="text/javascript"></script>
+<script src="/jscript/libs/checkbox.js" type="text/javascript"></script>
+<script src="/jscript/jQuery.form-2.83.js" type="text/javascript"></script>
+<script src="/jscript/popup.js" type="text/javascript"></script>
+<script src="/jscript/common.js" type="text/javascript"></script>
+<script src="/jscript/libs/jquery.ui.datepicker-ko.js" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery.ajaxSetup({ cache: false });
+</script>
+
+
+</head>
+<body>
+    <div class="wrap">
+        <ul class="skip">
+	        <li><a href="#content" tabindex="1">컨텐츠 바로가기</a></li>
+        </ul>
+        <div id="gnbMenu_dummytop" class="header_wrap"><div class="header_wrap">
+	<div class="header">
+		<h1 class="logo"><a href="/"><img src="/images/unique/logo_20191024.png" alt="고려대학교의료원" /></a></h1>
+		<ul class="gnb">
+			<li class="gnb_01 on">
+				<a href="/jobs/joblist.aspx">채용공고</a>
+			</li>
+			<li class="gnb_02 ">
+				<a href="/info/infolist.aspx">채용소식</a>
+			</li>
+			<li class="gnb_03 ">
+				<a href="/info/faq.aspx">FAQ</a>
+			</li>
+			<li class="gnb_04 ">
+				<a href="/info/qna.aspx">채용문의</a>
+			</li>
+			<li class="gnb_05">
+				<a href="http://www.kumc.or.kr/introduction/greeting.do" target="_blank" title="새창이동" alt="새창이동">의료원소개</a>
+			</li>
+		</ul>
+		<div class="go_home">
+			<a href="http://www.kumc.or.kr/" target="_blank">고려대학교의료원 바로가기</a>
+		</div>
+	</div>
+</div></div>
+        <article>
+            <div class="content_wrap">
+                <div id="pageLeftMenu_leftmenu" class="lnb lnb_01"><div class="lnb_title">인재채용</div>
+<ul>
+	<li class="lnbmenu_01 on"><a href="/jobs/joblist.aspx" >채용공고</a></li>
+	<li class="lnbmenu_02 "><a href="/jobs/checkmodify.aspx">지원서수정</a></li>
+	<li class="lnbmenu_03 "><a href="/info/">채용소식</a></li>
+	<li class="lnbmenu_04 "><a href="/info/faq.aspx">FAQ</a></li>
+	<li class="lnbmenu_05 "><a href="/info/qna.aspx">채용문의</a></li>
+	<li class="lnbmenu_06 "><a href="/jobs/queryResult.aspx">전형결과 확인</a></li>
+</ul></div>
+                <div id="contentsbody" class="content"><script language="javascript" type="text/javascript">
+    $(function () {
+
+        $('#btnSearch').click(function (e) {
+            fnSearch();
+        });
+    });
+
+    function fnSearch() {
+        $("#frm").submit();
+    }
+
+    function fnShowContent(Idx) {
+        $(stringformat(".job_content[key='{0}']", Idx)).slideToggle('fast');
+    }
+</script>
+
+<div class="content_title">
+    <h2 class="title">채용공고</h2>
+    <ul class="current_map">
+        <li><img src="/images/icon_home.png" alt="홈페이지 메인" /></li>
+        <li>인재채용</li>
+        <li>채용공고</li>
+    </ul>
+</div>
+
+<form id="frm" name="frm" action="/jobs/default.aspx" method="post">
+    <input type="hidden" id="departmentidx" name="departmentidx" value="0"/>
+    <div class="list_tabmenu_wrap mb30">
+	    <div class="list_tabmenu">
+            <div ><a href="/jobs/?SchText=&departmentidx=190001">의료원/대학</a></div>
+            <div ><a href="/jobs/?SchText=&departmentidx=190002">안암</a></div>
+            <div ><a href="/jobs/?SchText=&departmentidx=190003">구로</a></div>
+            <div ><a href="/jobs/?SchText=&departmentidx=190004">안산</a></div>
+		    <div class='on' ><a href="/jobs/?SchText=&departmentidx=0">전체</a></div>
+	    </div>
+	    <div class="search">
+		    <label for="SchText" class="vam3 label">키워드입력</label>
+		    <input type="text" id="SchText" name="SchText" value="" title="검색키워드입력" ent="fnSearch" />
+		    <input type="image" id="btnSearch" src="/images/icon_search.png" title="검색" alt="검색" tabindex="5" />
+	    </div>
+    </div>
+</form>
+
+<table summary="등록절차에 관한 내용입니다." class="list_type_01">
+    <caption>등록절차에 관한 표</caption>
+    <colgroup>
+        <col width="8%" />
+        <col width="*" />
+        <col width="25%" />
+        <col width="12%" />
+    </colgroup>
+    <thead>
+        <tr>
+            <th scope="col">순번</th>
+            <th scope="col">모집분야</th>
+            <th scope="col">모집기간</th>
+            <th scope="col">지원 및 변경</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">1</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946197&pidx=1946197"><strong>[안산병원] 호흡기내과 계약직간호사(결핵관리 전담) 모집</strong></a></td>
+                <td>20.12.15 00:00 ~ 21.02.28 24:00</td>
+                <td>
+                    <span class="icon_end"  style="display:none;" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946197">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946197">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946197">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">2</td>
+            <td class="subject"><a href="/jobs/view.aspx?jidx=106066&pidx=11617"><strong>[의료원]신규 교직원(정밀의학센터 임상병리사) 모집(연장)</strong></a></td>
+                <td>20.12.14 00:00 ~ 20.12.21 15:00</td>
+                <td>
+                    <span class="icon_end"  style="display:none;" >마감</span>
+                    <span class="icon_nv" ><a href="/jobs/agreeconditions.aspx?pidx=11617">신규지원</a></span>
+                    <span class="icon_mod" ><a href="/jobs/checkmodify.aspx?pidx=11617">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=106066">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">3</td>
+            <td class="subject"><a href="/jobs/view.aspx?jidx=106060&pidx=11611"><strong>[의료원]신규 교직원(흉부외과 전담간호사) 모집</strong></a></td>
+                <td>20.12.10 00:00 ~ 20.12.16 15:00</td>
+                <td>
+                    <span class="icon_end"  style="display:none;" >마감</span>
+                    <span class="icon_nv" ><a href="/jobs/agreeconditions.aspx?pidx=11611">신규지원</a></span>
+                    <span class="icon_mod" ><a href="/jobs/checkmodify.aspx?pidx=11611">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=106060">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">4</td>
+            <td class="subject"><a href="/jobs/view.aspx?jidx=106059&pidx=11610"><strong>[원내모집]구로병원 감염관리실</strong></a></td>
+                <td>20.12.10 00:00 ~ 20.12.16 15:00</td>
+                <td>
+                    <span class="icon_end"  style="display:none;" >마감</span>
+                    <span class="icon_nv" ><a href="/jobs/agreeconditions.aspx?pidx=11610">신규지원</a></span>
+                    <span class="icon_mod" ><a href="/jobs/checkmodify.aspx?pidx=11610">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=106059">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">5</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946196&pidx=1946196"><strong>[안산병원] 원무팀 계약직직원 모집</strong></a></td>
+                <td>20.12.10 00:00 ~ 20.12.20 23:55</td>
+                <td>
+                    <span class="icon_end"  style="display:none;" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946196">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946196">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946196">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">6</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946194&pidx=1946194"><strong>[안산병원] 직업환경의학과 시간제임상병리사, 시간제일반업무원 모집</strong></a></td>
+                <td>20.12.08 00:00 ~ 20.12.16 23:55</td>
+                <td>
+                    <span class="icon_end"  style="display:none;" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946194">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946194">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946194">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">7</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946193&pidx=1946193"><strong>[안산병원] 직업환경의학과 계약직간호사 모집(연장)</strong></a></td>
+                <td>20.12.08 00:00 ~ 20.12.20 23:55</td>
+                <td>
+                    <span class="icon_end"  style="display:none;" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946193">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946193">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946193">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">8</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946192&pidx=1946192"><strong>[안산병원] 직업환경의학과 시간제간호사(재공고)</strong></a></td>
+                <td>20.12.03 00:00 ~ 20.12.13 22:55</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946192">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946192">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946192">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">9</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946191&pidx=1946191"><strong>[안산병원] 간호부(간호간병) 계약직간호조무사 모집</strong></a></td>
+                <td>20.12.03 00:00 ~ 20.12.10 22:55</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946191">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946191">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946191">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">10</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946190&pidx=1946190"><strong>[안산병원] 간호부 시간제일반업무원 모집</strong></a></td>
+                <td>20.12.03 00:00 ~ 20.12.10 23:55</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946190">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946190">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946190">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">11</td>
+            <td class="subject"><a href="/jobs/view.aspx?jidx=106050&pidx=11601"><strong>[원내모집]안암병원 중증외상 최종치료센터 외상 코디네이터</strong></a></td>
+                <td>20.12.03 00:00 ~ 20.12.09 15:00</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=11601">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=11601">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=106050">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">12</td>
+            <td class="subject"><a href="/jobs/view.aspx?jidx=106033&pidx=11584"><strong>[의료원]신규 교직원(정규직) 모집</strong></a></td>
+                <td>20.11.25 00:00 ~ 20.12.01 15:00</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=11584">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=11584">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=106033">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">13</td>
+            <td class="subject"><a href="/jobs/view.aspx?jidx=106030&pidx=11581"><strong>[원내모집]안산병원 흉부외과 전담간호사</strong></a></td>
+                <td>20.11.20 00:00 ~ 20.11.26 15:00</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=11581">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=11581">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=106030">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">14</td>
+            <td class="subject"><a href="/jobs/email/view.aspx?jidx=1946184&pidx=1946184"><strong>[의료원] 2021년 일반직 인턴사원 모집</strong></a></td>
+                <td>20.11.16 00:00 ~ 20.11.27 17:00</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=1946184">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=1946184">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=1946184">지원</a></span>
+                </td>
+        </tr>
+
+        <tr class="job_title">
+            <td class="tac" style="padding-left:5px">15</td>
+            <td class="subject"><a href="/jobs/view.aspx?jidx=106019&pidx=11570"><strong>[의료원] 2020년 신규간호사 공개채용(추가모집)</strong></a></td>
+                <td>20.11.11 00:00 ~ 20.11.16 15:00</td>
+                <td>
+                    <span class="icon_end" >마감</span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/agreeconditions.aspx?pidx=11570">신규지원</a></span>
+                    <span class="icon_mod"  style="display:none;" ><a href="/jobs/checkmodify.aspx?pidx=11570">수정</a></span>
+                    <span class="icon_nv"  style="display:none;" ><a href="/jobs/email/application.aspx?jobidx=106019">지원</a></span>
+                </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div class="paging mt15">
+    <a name="currentpage" class="on">1</a><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=2">2</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=3">3</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=4">4</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=5">5</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=6">6</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=7">7</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=8">8</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=9">9</a></strong><strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=10">10</a></strong><a href="/jobs/default.aspx?SchText=&departmentidx=0&page=11"><img src="/images/backoffice/ico_paging_3.jpg" alt="다음 페이지 블럭"></a>
+</div>
+
+<p class="color333 mt30"><span style="padding-bottom:1px; border-bottom:1px solid #333; font-size:1.1em; font-weight:bold;">지원서 작성 요령</span></p>
+<ul class="apply_method mt20 mb40">
+    <li>입사지원서는 최종 제출 전까지 자유롭게 등록 및 수정할 수 있습니다.</li>
+    <li>입사지원 관련 궁금한 점은 채용 문의란을 이용하여 주시기 바랍니다.</li>
+    <li>아이디 혹은 비밀번호를 잊어버린 경우 아이디/비밀번호 찾기를 이용하여 주시기 바랍니다.</li>
+    <li>채용전형 일정은 공지사항  또는  합격자 대상 e-mail을 통해 공지합니다.</li>
+    <li>합격여부는 전형결과  확인란 혹은 개별 e-mail을  통해 안내해 드립니다.</li>
+</ul>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+			//탭메뉴 클릭시 활성화합니다.
+            $('.list_tabmenu>div').on('click',function(){
+				$(this).parents().children('div').removeClass('on');
+				$(this).parents().children('div').removeClass('deleteLine');
+				$(this).addClass('on');
+
+				//활성화된 탭의 디자인상 불필요한 좌측 라인을 없애기 위한 소스입니다.
+				var index = $(this).parents().children('div').index(this);
+				var deleteLine = index - 1;
+				$(this).parents().children('div').eq(deleteLine).addClass('deleteLine');
+			});
+        });
+</script></div>
+	        </div>
+        </article>
+
+<div class="footer_wrap">
+	<div class="footer">
+		<div class="foot_logo"><img src="/images/unique/foot_logo_20191024.png" alt="고려대학교의료원"></div>
+		<div class="foot_content">
+			<ul class="foot_menu">
+                <li><a href="http://www.kumc.or.kr/util/rullInternet.do" title="새창열림" target="_blank">인터넷이용약관</a></li>
+				<li><a href="http://www.kumc.or.kr/util/privacy.do" target="_blank" title="새창열림" style="color:#df2428;">개인정보처리방침</a></li>
+				<li><a href="http://www.kumc.or.kr/util/noemail.do" target="_blink" title="새창열림">이메일주소수집거부</a></li>
+                <li><a href="mailto:kumcinsa@kumc.or.kr" title="새창열림">전산시스템관련 비상연락처 : kumcinsa@kumc.or.kr</a></li>
+			</ul>
+			<p class="copy">Copyright 2005-2020 Korea University Medical Center, All Rights Reserved.</p>
+		</div><!--foot_content-->
+		<div class="powered">Powered by <span><a href="http://rpo.hellojob.com/?page_id=17" target="_blank">JADE 3.0</a></span></div>
+	</div>
+</div>
+    </div>
+</body>
+</html>

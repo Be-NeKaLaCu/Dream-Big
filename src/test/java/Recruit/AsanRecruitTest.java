@@ -27,6 +27,17 @@ public class AsanRecruitTest {
     }
 
     @Test
+    void testGetJobsOnTheDayOf() throws IOException, InterruptedException {
+        ArrayList<Job> jobs;
+
+        jobs = asanRecruit.getJobsOnTheDayOf(LocalDate.parse("2020-12-10"));
+        assertEquals(2, jobs.size());
+        assertEquals("간호부 간호간병통합병동지원인력 기능직(조무) 모집", jobs.get(0).subject);
+        assertEquals("관리부 기능직(조무 - 발열모니터링지원) 모집", jobs.get(0).subject);
+    }
+
+
+    @Test
     void testGenerateRecruitUrl() {
         assertEquals("https://recruit.amc.seoul.kr/recruit/career/list.do?pageIndex=1", asanRecruit.getRecruitPageUrl(1));
         assertEquals("https://recruit.amc.seoul.kr/recruit/career/list.do?pageIndex=2", asanRecruit.getRecruitPageUrl(2));

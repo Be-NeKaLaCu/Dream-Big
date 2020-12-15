@@ -27,6 +27,25 @@ public class SNURecruitTest {
     }
 
     @Test
+    void testGetJobsOnTheDayOf() throws IOException, InterruptedException {
+        ArrayList<Job> jobs;
+
+        jobs = snuRecruit.getJobsOnTheDayOf(LocalDate.parse("2020-12-13"));
+        assertEquals(2, jobs.size());
+        assertEquals("완화의료임상윤리센터에서 책임감 있고 성실한 연구원을 모집합니다.", jobs.get(0).subject);
+        assertEquals("2021년도 레지던트 선발 필기시험 시험실(좌석배치) 안내", jobs.get(1).subject);
+
+        jobs = snuRecruit.getJobsOnTheDayOf(LocalDate.parse("2020-12-04"));
+        assertEquals(3, jobs.size());
+        assertEquals("서울대학교병원 블라인드 직원채용 (대체근로자) 공고 (장애인 특별우대)", jobs.get(0).subject);
+        assertEquals("서울대학교병원 블라인드 직원채용 (단시간근로자) 공고 (장애인 특별우대)", jobs.get(1).subject);
+        assertEquals("<레지던트 지원자용> 코로나-19 관련 레지던트 필기시험 진행 안내", jobs.get(2).subject);
+
+        jobs = snuRecruit.getJobsOnTheDayOf(LocalDate.parse("2020-12-01"));
+        assertEquals(0, jobs.size());
+    }
+
+    @Test
     void testGenerateRecruitUrl() {
         assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=1", snuRecruit.getRecruitPageUrl(1));
         assertEquals("http://www.snuh.org/about/news/recruit/recruList.do?pageIndex=2", snuRecruit.getRecruitPageUrl(2));

@@ -1,0 +1,295 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko">
+
+
+
+
+	<link rel="shortcut icon" href="https://www.kdh.or.kr:446/img/hi.ico" type="image/x-icon"/>
+	<link rel="icon" href="https://www.kdh.or.kr:446/img/hi.ico" type="image/x-icon"/>
+
+
+
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="naver-site-verification" content="210b36d250f0f129fd893a5a45e69329f3a6a5c4">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+ 	<meta name="robots" content="noindex,nofollow" />
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="shortcut icon" href="https://www.kdh.or.kr:446/img/hi.ico" type="image/x-icon"/>
+	<link rel="icon" href="https://www.kdh.or.kr:446/img/hi.ico" type="image/x-icon"/>
+	<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" type="text/css" media="all"><![endif]-->
+	<title>강동성심병원 채용정보</title>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="js/ui.core_1.8.3.js" defer></script>
+	<script type="text/javascript" src="js/ui.draggable.js" defer></script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div class="headerInnr">
+				<a href="/index.jsp"><h1><img src="https://recruit.kdh.or.kr:446/img/recruit_p11.gif" alt="강동성심병원 채용정보" /></h1></a>
+			</div>
+		</div>
+
+
+
+		<div id="container">
+			<div class="visual">
+				<ul class="visual_in">
+					<li><img src="img/visual1.jpg" alt=""/></li>
+					<li><img src="img/visual2.jpg" alt=""/></li>
+					<li><img src="img/visual3.jpg" alt=""/></li>
+				</ul>
+				<div class="visual_btn">
+					<span class="bullet">1</span>
+					<span class="bullet">2</span>
+					<span class="bullet">3</span>
+				</div>
+			</div>
+
+			<div class="rct_body">
+				<div class="rct_tab">
+					<ul>
+						<li class="on" id="liRecTap1" onclick="fn_chgTab('ing');">접수중</li>
+						<li  id="liRecTap0" onclick="fn_chgTab('end');"> 마감</li>
+						<li  id="liRecTap2" onclick="fn_chgTab('all');">상시채용</li>
+					</ul>
+				</div>
+
+				<div class="rct_list" style="cursor: default" id="rct_list_ing">
+					<ul>
+
+						<a href ="/hrt_p20_detail.jsp?locate=6&adoptcnt=225&inggbn=ing&movePage=1&adoptyy=2020">
+						<li>
+							<p><span>『강동성심병원』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;강동성심병원 임상교원 및 임상강사 초빙<span style="float:right;">2021.02.28</span></p>
+
+							<div class="d_day">D-75</div></li></a>
+
+					</ul>
+				</div>
+
+				<!-- 페이징 -->
+					<div style="text-align:center;padding-top:20px;">
+						<a href="index.jsp?inggbn=ing&movePage=1">[맨앞으로]</a>
+						<a href="index.jsp?inggbn=ing&movePage=1">[이전]</a>
+
+						<a href="index.jsp?inggbn=ing&movePage=1">
+
+						<span style="font-weight:bold;color:#0000ff;">[1]</span>
+
+						</a>
+
+						<a href="index.jsp?inggbn=ing&movePage=1" >[다음]</a>
+						<a href="index.jsp?inggbn=ing&movePage=1">[맨뒤로]</a>
+					</div>
+				<!-- 페이징 //-->
+			</div>
+			<!-- right -->
+			<div class="right_btn">
+				<div class="mod" onclick="fn_GoUrl1('hrt_p45_applyM.jsp');"><a href="javascript:void(0);"><em>지원서확인/수정</em> <span class="common_img"></span></a></div>
+				<div class="rst"><a href="javascript:void(0);" onclick="fn_GoUrl2('hrt_etc_03.jsp');"><em>전형결과확인</em> <span class="common_img"></span></a></div>
+				<div class="email"><a href="javascript:void(0);" onclick="fn_GoUrl2('hrt_etc_02.jsp');"><span class="common_img"></span><br/><em>비밀번호 찾기</em></a></div>
+				<div class="reis"><a href="javascript:void(0);" onclick="fn_reissuance('hrt_etc_01.jsp');"><span class="common_img"></span><br/><em>수험표 재발급</em></a></div>
+				<div class="guide"><a href="javascript:void(0);" onclick="fn_pop_guide();"><em>입사지원서<br/>작성가이드</em> <span class="common_img"></span></a></div>
+				<!-- <div><img src="img/yellow_id.gif" alt="옐로아이디 : @hallym"></div> -->
+			</div>
+			<!-- right //-->
+		</div>
+		<div class="alert_lay" style="display:none;" id="alertMsg">
+	<h1>알립니다.</h1>
+	<div class="pu_close">
+		<a href="javascript:void(0);" title="창 닫기 버튼" onclick="fnDivHide();"><p class="cl_btn">닫기</p></a>
+	</div>
+	<div class="clear mb20"></div>
+	<b><p id="alert_text" style="padding-bottom:10px;text-align:left;">alert</p></b>
+</div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52302712-11', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div id="footer">COPYRIGHT ⓒ 2014 Kangdong Sacred Heart Hospital. ALL RIGHTS RESERVED.<Br/>Internet Explorer 10 (IE10) 이상, 크롬 환경에 최적화되어 있습니다. <a href="http://www.kdh.or.kr/hallymuniv_sub.asp?left_menu=left_policy&screen=ptm933" target="_blank"><span  class="point">개인정보처리방침</span></a></div>
+	</div>
+
+<form method="post" action="">
+<input type="hidden" name="chkBrowser" id="chkBrowser" value="" readonly>
+</form>
+
+	<script src="js/jquery.blockUI.js"></script>
+	<script type="text/javascript">
+		var strInggbn	= "1";
+
+		$(document).ready(function() {
+			var event;
+			if (document.createEvent) {
+				event = document.createEvent("HTMLEvents");
+				event.initEvent("click", true, false);
+			} else {
+				event = document.createEventObject();
+				event.eventType = "click";
+			}
+
+			//var event = document.createEvent("HTMLEvents");
+			//event.initEvent("click", true, false);
+			//document.getElementById('liRecTap'+strInggbn).dispatchEvent(event);
+		});
+
+		function open_guide_pop_close() {
+			$("#guidePop").hide();
+		}
+
+		function fn_pop_guide() {
+			if ( mobile_chk == "M" ) {
+				alert('PC 웹사이트에서 이용해 주십시오.');
+				return false;
+			} else {
+				var url, w, h
+				url = "/hrt_pop_guide.jsp";
+				w	= "999";
+				h	= "780";
+				window.open(url,"_blank","scrollbars=no,toolbar=no,location=no,directories=no,width="+w+",Height="+h);
+			}
+		}
+
+		function fn_reissuance(url) {
+			if ( mobile_chk == "M" ) {
+				alert('PC 웹사이트에서 이용해 주십시오.');
+				return false;
+			} else {
+				var chkIeVer = $("#chkBrowser").val();
+
+				if ( chkIeVer == "less" ) {
+					location.href = "https://recruit.kdh.or.kr:446/"+url;
+				} else {
+					location.href = url;
+				}
+			}
+		}
+
+		var filter = "win16|win32|win64|mac|macintel";
+		var mobile_chk = "";
+
+		if ( navigator.platform ) {
+			if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
+				//mobile
+				mobile_chk = "M";
+			} else {
+				//pc
+				mobile_chk = "P";
+			}
+		}
+
+		function fn_GoUrl1(url) {
+			if ( mobile_chk == "M" ) {
+				alert('온라인 입사지원은 PC 웹사이트에서 이용해 주십시오.');
+				return false;
+			} else {
+				var chkIeVer = $("#chkBrowser").val();
+
+				if ( chkIeVer == "less" ) {
+					location.href = "https://recruit.kdh.or.kr:446/"+url;
+				} else {
+					location.href = url;
+				}
+			}
+		}
+
+		function fn_GoUrl2(url) {
+			var chkIeVer = $("#chkBrowser").val();
+
+			if ( chkIeVer == "less" ) {
+				location.href = "https://recruit.kdh.or.kr:446/"+url;
+			} else {
+				location.href = url;
+			}
+		}
+
+		var gallery_num = 0;/*이미지 출력번호 기록*/
+		var btn_num = 0;
+
+		$(function(){
+			var $source	= $(".visual_in li img.source-image").attr("src");
+			var img_h		=  parseInt( $(".visual_in li img").css("height") )
+
+			//$(".visual_in li img").css({backgroundImage:"url("+$source+")", backgroundRepeat:"no-repeat", backgroundPosition:"center 0"})
+			$(".source-image").css({height:img_h})
+			$(".visual_btn span:first").css({background:"#f27186",borderRauids:10}).animate({width:20});
+			$(".visual_btn span").click(function(){
+				$(".visual_in").animate({marginLeft: -parseInt($(".visual_in li").css("width"))*$(this).index()});
+				btn_num = gallery_num =  $(this).index();
+				fntest(btn_num);
+				$(".visual_in").css({height:img_h})
+			});
+		});
+
+		function fntest(num){
+			 $(".visual_btn span").css({background:"#666"}).animate({width:10});
+			 $(".visual_btn span:eq("+num+")").css({background:"#f27186",borderRauids:10}).animate({width:30});
+		}
+
+		function fn_chgTab(val){
+			if (val=="ing") {
+				location.href="index.jsp?inggbn=ing&movePage=1";
+			} else if (val=="end") {
+				location.href="index.jsp?inggbn=end&movePage=1";
+			} else if (val=="all") {
+				location.href="index.jsp?inggbn=all&movePage=1";
+			}
+		}
+
+		function get_ver_IE_head() {
+			var word, version = "N/A", agent = navigator.userAgent.toLowerCase();
+			/*IE old version ( IE 10 or Lower ) */
+			if ( navigator.appName == "Microsoft Internet Explorer" ) word = "msie ";
+			else {
+				/*IE 11 */
+				if ( agent.search("trident") > -1 ) word = "trident/.*rv:";
+				/*Edge  */
+				else if ( agent.search("edge/") > -1 ) word = "edge/";
+			}
+
+			var reg = new RegExp( word + "([0-9]{1,})(\\.{0,}[0-9]{0,1})" );
+			if (  reg.exec( agent ) != null  ) version = RegExp.$1 + RegExp.$2;
+			return parseInt(version, 10);
+		}
+
+		var is_ie_head = (navigator.appName=="Microsoft Internet Explorer")
+		var chkBrowser = "";
+
+		if (is_ie_head) {
+			var ver_head = get_ver_IE_head();
+			if (ver_head <= 9) {
+				chkBrowser = "less";
+			} else {
+				chkBrowser = "exceed";
+			}
+		} else {
+			chkBrowser = "other";
+		}
+
+		$(document).ready(function() {
+			$("#chkBrowser").val(chkBrowser);
+		});
+	</script>
+</body>
+</html>

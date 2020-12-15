@@ -1,5 +1,9 @@
 package Recruit;
 
+import Recruit.Company.SNURecruit;
+import Recruit.Company.SamsungRecruit;
+import Recruit.Company.YonseiRecruit;
+
 import java.util.ArrayList;
 
 public class RecruitFactory {

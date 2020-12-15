@@ -1,4 +1,4 @@
-package Recruit;
+package Recruit.Company;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -6,6 +6,8 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import Recruit.Company.YonseiRecruit;
+import Recruit.Job;
 import com.google.gson.JsonArray;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

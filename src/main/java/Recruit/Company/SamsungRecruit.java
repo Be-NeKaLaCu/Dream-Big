@@ -1,5 +1,6 @@
-package Recruit;
+package Recruit.Company;
 
+import Recruit.RecruitAbstract;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

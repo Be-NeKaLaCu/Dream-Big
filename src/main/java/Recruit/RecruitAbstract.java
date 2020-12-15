@@ -9,39 +9,22 @@ public abstract class RecruitAbstract<T> {
         int page = 0;
         ArrayList<Job> jobs = new ArrayList<Job>();
 
-        boolean isNewRecruit = true;
-        while (isNewRecruit) {
+        while (true) {
             page ++;
             String pageString = getRecruitPage(page);
 
             Iterable<T> list = getListSafely(pageString);
 
-            if (list == null) {
+            ArrayList<Job> jobsInList = getJobsInList(list);
+
+            jobs.addAll(jobsInList);
+
+            if (isLastPage(jobsInList, date)) {
                 break;
             }
-
-            for (T item : list) {
-                LocalDate recruitStartDate = getStartDate(item);
-
-                if (recruitStartDate.isAfter(date)) {
-                    continue;
-                }
-
-                if (recruitStartDate.isBefore(date)) {
-                    isNewRecruit = false;
-                    break;
-                }
-
-                Job job = new Job(
-                        getCompanyName(),
-                        getSubject(item),
-                        getLink(item),
-                        getStartDate(item),
-                        getEndDate(item)
-                );
-                jobs.add(job);
-            }
         }
+
+        jobs.removeIf(job -> !job.startDate.isEqual(date));
 
         return jobs;
     }
@@ -52,10 +35,33 @@ public abstract class RecruitAbstract<T> {
         try {
             list = getList(page);
         } catch (Exception e) {
-            list = null;
+            list = new ArrayList<>();
         }
 
         return list;
+    }
+
+    private ArrayList<Job> getJobsInList(Iterable<T> list) {
+        ArrayList<Job> jobs = new ArrayList<>();
+
+        for (T item : list) {
+            try {
+                Job job = new Job(
+                        getCompanyName(),
+                        getSubject(item),
+                        getLink(item),
+                        getStartDate(item),
+                        getEndDate(item)
+                );
+                jobs.add(job);
+            } catch (Exception ignored) {}
+        }
+
+        return jobs;
+    }
+
+    private boolean isLastPage(ArrayList<Job> jobsInList, LocalDate date) {
+        return jobsInList.size() == 0 || jobsInList.get(jobsInList.size() - 1).startDate.isBefore(date);
     }
 
     abstract protected String getCompanyName();

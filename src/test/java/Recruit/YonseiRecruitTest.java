@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import com.google.gson.JsonArray;
 
@@ -21,6 +22,15 @@ public class YonseiRecruitTest {
         
         content = readFileInResources("YonseiRecruit/page_1");
         list = yonseiRecruit.getList(content);
+    }
+
+    @Test
+    void testGetJobsOnTheDayOf() throws IOException, InterruptedException {
+        ArrayList<Job> jobs;
+
+        jobs = yonseiRecruit.getJobsOnTheDayOf(LocalDate.parse("2020-11-18"));
+        assertEquals(1, jobs.size());
+        assertEquals("[일반-강남] 간호사(계약직;정규직전환조건) 임상연구관리실 20.11 모집안내", jobs.get(0).subject);
     }
 
     @Test

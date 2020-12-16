@@ -1,0 +1,36 @@
+{
+         "recruitTypeCode":"00",
+         "applyStartDate":{
+            "date":4,
+            "hours":17,
+            "seconds":0,
+            "month":11,
+            "timezoneOffset":-540,
+            "year":120,
+            "minutes":0,
+            "time":1607068800000,
+            "day":5
+         },
+         "recruitClassName":"공채(계약직)",
+         "systemKindCode":"MRS1",
+         "jobnoticeName":"계약직 신입직원 [동서건강증진센터 파트타임 간호사 및 임상병리사] 공개채용 모집",
+         "jobnoticeSn":24945,
+         "applyEndDate":{
+            "date":10,
+            "hours":8,
+            "seconds":0,
+            "month":11,
+            "timezoneOffset":-540,
+            "year":120,
+            "minutes":0,
+            "time":1607554800000,
+            "day":4
+         },
+         "imageFilePath":"",
+         "recruitTypeName":"일반채용",
+         "companySn":35039,
+         "deadlineCount":-6,
+         "defaultImageUseYn":false,
+         "receiptState":"접수마감",
+         "applyPermitCount":1
+      }

@@ -16,13 +16,12 @@ import org.junit.jupiter.api.Test;
 
 public class YonseiRecruitTest {
     private final YonseiRecruit yonseiRecruit;
-    private final String content;
     private final JsonArray list;
 
     YonseiRecruitTest() throws IOException {
         yonseiRecruit = new YonseiRecruit();
-        
-        content = readFileInResources("YonseiRecruit/page_1");
+
+        String content = readFileInResources("YonseiRecruit/page_1");
         list = yonseiRecruit.getList(content);
     }
 

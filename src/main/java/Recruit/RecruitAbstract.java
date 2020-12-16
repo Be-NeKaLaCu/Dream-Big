@@ -19,7 +19,7 @@ public abstract class RecruitAbstract<T> {
 
             jobs.addAll(jobsInList);
 
-            if (jobsInList.size() == 0 || page > 10) {
+            if (jobsInList.size() == 0 || page > 5) {
                 break;
             }
         }

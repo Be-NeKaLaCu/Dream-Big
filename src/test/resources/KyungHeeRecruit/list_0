@@ -1,0 +1,36 @@
+{
+         "recruitTypeCode":"00",
+         "applyStartDate":{
+            "date":10,
+            "hours":8,
+            "seconds":0,
+            "month":11,
+            "timezoneOffset":-540,
+            "year":120,
+            "minutes":0,
+            "time":1607554800000,
+            "day":4
+         },
+         "recruitClassName":"공채(계약직)",
+         "systemKindCode":"MRS1",
+         "jobnoticeName":"단기 계약직 신입직원 [진단검사의학과 임상병리사(선별진료소 근무)] 공개채용 모집",
+         "jobnoticeSn":24956,
+         "applyEndDate":{
+            "date":14,
+            "hours":8,
+            "seconds":0,
+            "month":11,
+            "timezoneOffset":-540,
+            "year":120,
+            "minutes":0,
+            "time":1607900400000,
+            "day":1
+         },
+         "imageFilePath":"",
+         "recruitTypeName":"일반채용",
+         "companySn":35039,
+         "deadlineCount":-2,
+         "defaultImageUseYn":false,
+         "receiptState":"접수마감",
+         "applyPermitCount":1
+      }

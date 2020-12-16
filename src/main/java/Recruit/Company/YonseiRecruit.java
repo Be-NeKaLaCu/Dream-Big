@@ -13,11 +13,9 @@ import com.google.gson.JsonParser;
 import Facade.Http;
 
 public class YonseiRecruit extends RecruitAbstract<JsonElement> {
-    private final String baseRecruitUrl = "https://yuhs.recruiter.co.kr/app/jobnotice";
-
     @Override
     protected String getRecruitPage(int page) throws IOException, InterruptedException {
-        String recruitUrl = baseRecruitUrl + "/list.json";
+        String recruitUrl = getBaseRecruitUrl() + "/list.json";
 
         HashMap<String, String> map = new HashMap<>();
         map.put("recruitClassSn", "");
@@ -42,7 +40,10 @@ public class YonseiRecruit extends RecruitAbstract<JsonElement> {
 
     @Override
     protected String getLink(JsonElement item) {
-        return baseRecruitUrl + "/view?systemKindCode=MRS2&jobnoticeSn=" + item.getAsJsonObject().get("jobnoticeSn").toString();
+        String systemKindCode = item.getAsJsonObject().get("systemKindCode").getAsString();
+        String jobNoticeSn = item.getAsJsonObject().get("jobnoticeSn").getAsString();
+
+        return getBaseRecruitUrl() + "/view?systemKindCode=" + systemKindCode + "&jobnoticeSn=" + jobNoticeSn;
     }
 
     @Override
@@ -68,6 +69,10 @@ public class YonseiRecruit extends RecruitAbstract<JsonElement> {
             dateElement.getAsJsonObject().get("month").getAsInt() + 1, 
             dateElement.getAsJsonObject().get("date").getAsInt()
         ); 
+    }
+
+    protected String getBaseRecruitUrl() {
+        return "https://yuhs.recruiter.co.kr/app/jobnotice";
     }
     
 }

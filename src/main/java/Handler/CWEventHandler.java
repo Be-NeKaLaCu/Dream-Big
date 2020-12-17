@@ -25,7 +25,7 @@ public class CWEventHandler implements RequestHandler<ScheduledEvent, String> {
                     noti.notify(job);
                 }
             } catch (Exception ignored) {
-
+                // TODO: 오류 로깅
             }
 
         }

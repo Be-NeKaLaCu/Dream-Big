@@ -1,8 +1,6 @@
 package Recruit;
 
-import Recruit.Company.SNURecruit;
-import Recruit.Company.SamsungRecruit;
-import Recruit.Company.YonseiRecruit;
+import Recruit.Company.*;
 
 import java.util.ArrayList;
 
@@ -11,9 +9,13 @@ public class RecruitFactory {
     {
         var recruits = new ArrayList<RecruitAbstract<?>>();
 
+        recruits.add(new KangdongRecruit());
+        recruits.add(new KoreaRecruit());
+        recruits.add(new KyungHeeRecruit());
+        recruits.add(new SamsungRecruit());
+        recruits.add(new SeoulMaryRecruit());
         recruits.add(new SNURecruit());
         recruits.add(new YonseiRecruit());
-        recruits.add(new SamsungRecruit());
 
         return recruits;
     }

@@ -16,20 +16,19 @@ public class CWEventHandler implements RequestHandler<ScheduledEvent, String> {
     {
         LocalDate yesterday = LocalDate.now().minusDays(1);
 
-        try {
-            for (var recruit : RecruitFactory.makeAll()) {
+        for (var recruit : RecruitFactory.makeAll()) {
+            try {
                 ArrayList<Job> jobs = recruit.getJobsOnTheDayOf(yesterday);
 
                 var noti = new SlackNotifier();
                 for (Job job: jobs) {
                     noti.notify(job);
                 }
-
+            } catch (Exception ignored) {
+                // TODO: 오류 로깅
             }
-            return "200 OK";
 
-        } catch (Exception e) {
-            return "";
         }
+        return "OK";
     }
 }

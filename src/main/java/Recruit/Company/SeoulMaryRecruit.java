@@ -15,7 +15,7 @@ public class SeoulMaryRecruit extends RecruitAbstract<Element> {
 
     @Override
     protected String getCompanyName() {
-        return "서울성심병원";
+        return "서울성모병원";
     }
 
     @Override
